@@ -55,7 +55,6 @@ include(__DIR__ . './../includes/header.php');
 
     <?php
          include(__DIR__ . './../database.php');
-
             $id = $_GET['id'];
             $sql = "SELECT * from blog WHERE id='$id'";
             $query = mysqli_query($conn, $sql);

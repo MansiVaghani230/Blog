@@ -11708,3 +11708,10 @@ input.datatable-input {
   border-color:#b3b3b3;
   outline: none;
 }
+/* jinal  */
+
+.box {
+  border-color: transparent;
+  border-radius: 0.375rem;
+  position: relative;
+}
