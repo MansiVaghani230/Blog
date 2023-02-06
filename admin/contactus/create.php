@@ -58,7 +58,7 @@ include(__DIR__ . './../includes/header.php');
                                         <div class="input-form my-2">
                                             <label class="form-label" for="phone">phone<span
                                                     class="text-danger">*</span></label>
-                                            <input type="text" id="phone" name="phone"
+                                            <input type="number" id="phone" name="phone"
                                                 class="form-control " value="" placeholder="Enter Your phone"
                                                 autofocus required />
                                         </div>
@@ -66,7 +66,7 @@ include(__DIR__ . './../includes/header.php');
                                         <div class="input-form my-2">
                                             <label class="form-label" for="email">email<span
                                                     class="text-danger">*</span></label>
-                                            <input type="text" id="email" name="email"
+                                            <input type="email" id="email" name="email"
                                                 class="form-control " value="" placeholder="Enter Your email"
                                                 autofocus required />
                                         </div>
