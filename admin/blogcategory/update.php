@@ -11,7 +11,8 @@ include(__DIR__ . './../includes/header.php');
         if (isset($_POST['submit'])) {
             $id = $_POST['id'];
             $category_name = $_POST['category_name'];
-            $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `category_name`='$category_name' WHERE `id`='$id'");
+            $category_name = $_POST['category_name'];
+            $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `category_name`='$category_name', 'show_in_nav' = '$show_in_nav' WHERE `id`='$id'");
             if (!$sql) {
                 echo mysqli_error($conn);
             } else {
@@ -58,6 +59,12 @@ include(__DIR__ . './../includes/header.php');
                                             <label class="form-label" for="category_name">category_name<span  class="text-danger">*</span></label>
                                             <input type="text" id="category_name" name="category_name" class="form-control " value="<?php echo $row['category_name']; ?>" placeholder="Enter Your Name" autofocus required /> 
                                     </div>  
+                                    <div class="input-form my-2">
+                                            <label class="form-label" for="show_in_nav">Show Navigation<span
+                                                    class="text-danger">*</span></label>
+                                            <input type="radio" id="show_in_nav" value="y" name="show_in_nav"/>Yes
+                                            <input type="radio" id="show_in_nav" value="n" name="show_in_nav"/>No
+                                        </div>
                                    
                                      <hr>
                                      <div class="input-form my-1">
