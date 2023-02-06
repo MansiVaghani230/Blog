@@ -15,6 +15,7 @@ include(__DIR__ . './../includes/header.php');
                         <tr>
                         <th>id</th>
                         <th>name</th>
+                        <th>Show In</th>
                         <th>Actions</th>
                         </tr>
                     </thead>
@@ -27,6 +28,7 @@ include(__DIR__ . './../includes/header.php');
                     ?>
                         <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['category_name']; ?></td>
+                        <td><?php echo $row['show_in_nav']; ?></td>
                         <td>
                         <a href="./update.php?id=<?php echo $row['id']; ?>"><button class="btn btn-success"><i
                                         class="fa-solid fa-pen-to-square"></i></button></a>
