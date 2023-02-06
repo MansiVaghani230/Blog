@@ -11699,3 +11699,12 @@ body {
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
 }
+
+svg.svg-inline--fa.fa-eye {
+  color: white!important;
+}
+input.datatable-input {
+  border-radius: 20px !important;
+  border-color:#b3b3b3;
+  outline: none;
+}
