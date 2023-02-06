@@ -49,7 +49,7 @@ include(__DIR__ . './../includes/header.php');
 </head>
 
 <body>
-    <div class="app-content content ">
+    <div class="app-content content">
         <div class="content-wrapper container-xxl p-0 pt-5">
             <div class="content-body">
                 <section class="bs-validation">

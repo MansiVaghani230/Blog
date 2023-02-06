@@ -33,7 +33,7 @@ include(__DIR__ . './../includes/header.php');
     ?>
 
 <div class="app-content content ">
-    <div class="content-wrapper container-xxl p-0 pt-2">
+    <div class="content-wrapper container-xxl p-0 pt-5">
         <div class="content-body">
             <section class="bs-validation">
                 <div class="row">
@@ -52,17 +52,24 @@ include(__DIR__ . './../includes/header.php');
                                     enctype="multipart/form-data" novalidate>
 
                                      <!--Start Form Field  -->
-                                     <input type="text" id="id" name="id" placeholder="id..." value="<?php echo $row['id']; ?>" readonly>
+                                     <!-- <input type="text" id="id" name="id" placeholder="id..." value="<?php echo $row['id']; ?>" readonly> -->
 
-                                    <div class="input-form mb-1">
+                                    <div class="input-form my-2">
                                             <label class="form-label" for="category_name">category_name<span  class="text-danger">*</span></label>
                                             <input type="text" id="category_name" name="category_name" class="form-control " value="<?php echo $row['category_name']; ?>" placeholder="Enter Your Name" autofocus required /> 
                                     </div>  
                                    
                                      <hr>
-                                    <div class="input-form mt-1">
-                                    <button name="submit" type="submit" value="submit" class="btn btn-primary">Update</botton></br>
-                                    </div>  
+                                     <div class="input-form my-1">
+                                            <button type="submit" name="submit" value="submit"
+                                                class="btn btn-success"><b>Save</b></button>
+                                            <button type="reset" name="reset" value="reset"
+                                                class="btn btn-secondary"><b>Reset</b></button>
+                                            <a href="./delete.php?id=<?php echo $row['id']; ?>"><button
+                                                    class="btn btn-danger">
+                                                    <b>delete</b></button></a>
+                                            <a href="./index.php" class="btn btn-dark float-end"><b>Back</b></a>
+                                        </div>
                                     <?php } ?>      
                                 </form>
                             </div>
