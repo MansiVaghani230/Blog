@@ -39,9 +39,6 @@ include(__DIR__ . './../database.php');
         ?>
           <div id="layoutSidenav_content">
                 <main>
-                <?php
-            include(__DIR__ .'../sidebar.php');
-        ?>
-        
+                
 
 
