@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Crypto blogcategory</title>
+<title>Crypto ContactUs</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <?php
 include(__DIR__ . './../includes/header.php');
@@ -10,8 +10,10 @@ include(__DIR__ . './../includes/header.php');
   
         if (isset($_POST['submit'])) {
             $id = $_POST['id'];
-            $category_name = $_POST['category_name'];
-            $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `category_name`='$category_name' WHERE `id`='$id'");
+            $name = $_POST['name'];
+            $phone = $_POST['phone'];
+            $email = $_POST['email'];
+            $sql = mysqli_query($conn, "UPDATE `contactus` SET `name`,`phone`,`email`='$name','$phone','$email' WHERE `id`='$id'");
             if (!$sql) {
                 echo mysqli_error($conn);
             } else {
@@ -21,7 +23,7 @@ include(__DIR__ . './../includes/header.php');
         } else { ?><?php
             include(__DIR__ . './../database.php');
             $id = $_GET['id'];
-            $sql = "SELECT * from blogcategory WHERE id='$id'";
+            $sql = "SELECT * from contactus WHERE id='$id'";
             $query = mysqli_query($conn, $sql);
 
             ?>
@@ -41,13 +43,10 @@ include(__DIR__ . './../includes/header.php');
                     <div class="col-md-8 col-12">
                         <div class="card">
                             <div class="card-header pb-0">
-                                <h4 class="card-title">Update blogcategory</h4>
-                                <div class=" float-end">
-                                <!-- <button name="submit" type="submit" value="submit" class="btn btn-primary">Submit</botton></br> -->
-                                </div>
+                                <h4 class="card-title">Update Contact Us</h4>
                             </div>
                             <div class="card-body pt-0">
-                                <form name="blogcategory" id="blogcategory" class="validate-form1 needs-validation"
+                                <form name="contactus" id="contactus" class="validate-form1 needs-validation"
                                     action="" method="POST"
                                     enctype="multipart/form-data" novalidate>
 
@@ -55,9 +54,19 @@ include(__DIR__ . './../includes/header.php');
                                      <!-- <input type="text" id="id" name="id" placeholder="id..." value="<?php echo $row['id']; ?>" readonly> -->
 
                                     <div class="input-form my-2">
-                                            <label class="form-label" for="category_name">category_name<span  class="text-danger">*</span></label>
-                                            <input type="text" id="category_name" name="category_name" class="form-control " value="<?php echo $row['category_name']; ?>" placeholder="Enter Your Name" autofocus required /> 
+                                            <label class="form-label" for="name">Name<span  class="text-danger">*</span></label>
+                                            <input type="text" id="name" name="name" class="form-control " value="<?php echo $row['name']; ?>" placeholder="Enter Your Name" autofocus required /> 
                                     </div>  
+
+                                    <div class="input-form my-2">
+                                            <label class="form-label" for="phone">Phone<span  class="text-danger">*</span></label>
+                                            <input type="text" id="phone" name="phone" class="form-control " value="<?php echo $row['phone']; ?>" placeholder="Enter Your phone" autofocus required /> 
+                                    </div> 
+                                    
+                                    <div class="input-form my-2">
+                                            <label class="form-label" for="email">email<span  class="text-danger">*</span></label>
+                                            <input type="text" id="email" name="email" class="form-control " value="<?php echo $row['email']; ?>" placeholder="Enter Your email" autofocus required /> 
+                                    </div> 
                                    
                                      <hr>
                                      <div class="input-form my-1">

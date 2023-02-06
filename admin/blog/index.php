@@ -39,8 +39,7 @@ include(__DIR__ . './../includes/header.php');
                                         class="fa-solid fa-pen-to-square"></i></button></a>
                             <a href="./delete.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger"><i
                                         class="fa-solid fa-trash"></i></button></a>
-                            <a href="./delete.php?id=<?php echo $row['id']; ?>"><button class="btn btn-warning">
-                                    <i class="fa-solid fa-eye"></i></button></a>
+                         
                         </td>
                     </tr>
                     <?php } ?>

@@ -134,9 +134,6 @@ include(__DIR__ . './../includes/header.php');
                                                 class="btn btn-success"><b>Save</b></button>
                                             <button type="reset" name="reset" value="reset"
                                                 class="btn btn-secondary"><b>Reset</b></button>
-                                            <a href="./delete.php?id=<?php echo $row['id']; ?>"><button
-                                                    class="btn btn-danger">
-                                                    <b>delete</b></button></a>
                                             <a href="./index.php" class="btn btn-dark float-end"><b>Back</b></a>
                                         </div>
 
