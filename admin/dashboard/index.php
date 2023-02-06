@@ -1,5 +1,5 @@
 <?php
-include(__DIR__ . './includes/header.php');
+include(__DIR__ . './../includes/header.php');
 ?>
   <div class="container-fluid px-4">
                         <h1 class="mt-4">Dashboard</h1>
@@ -9,7 +9,19 @@ include(__DIR__ . './includes/header.php');
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Primary Card</div>
+                                    <div class="card-body">Total BlogCategory</div>
+                                    <?php
+                                    $sql = "SELECT * from blogcategory";
+                                    $query = mysqli_query($conn, $sql);
+
+                                    if($row= mysqli_num_rows($query))
+                                    {
+                                        echo'<h4 class="mx-3">'.$row.'<h4>';
+                                    }
+                                    else{
+                                        echo'<h4 class="mx-3"> No Data <h4>';
+                                    }
+                                    ?>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -18,7 +30,19 @@ include(__DIR__ . './includes/header.php');
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Warning Card</div>
+                                    <div class="card-body">Total Blog</div>
+                                    <?php
+                                    $sql = "SELECT * from blog";
+                                    $query = mysqli_query($conn, $sql);
+
+                                    if($row= mysqli_num_rows($query))
+                                    {
+                                        echo'<h4 class="mx-3">'.$row.'<h4>';
+                                    }
+                                    else{
+                                        echo'<h4 class="mx-3"> No Data <h4>';
+                                    }
+                                    ?>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -27,14 +51,15 @@ include(__DIR__ . './includes/header.php');
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Success Card</div>
+                                    <div class="card-body">Total User</div>
+                          
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
+                            <!-- <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">Danger Card</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -42,9 +67,9 @@ include(__DIR__ . './includes/header.php');
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-xl-6">
                                 <div class="card mb-4">
                                     <div class="card-header">
@@ -63,8 +88,8 @@ include(__DIR__ . './includes/header.php');
                                     <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card mb-4">
+                        </div> -->
+                        <!-- <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Example
@@ -551,9 +576,9 @@ include(__DIR__ . './includes/header.php');
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 <?php
-include('includes/footer.php');
-include('includes/script.php');
+include(__DIR__ . './../includes/footer.php');
+include(__DIR__ . './../includes/script.php');
 ?>
