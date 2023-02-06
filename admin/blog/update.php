@@ -29,7 +29,7 @@ include(__DIR__ . './../includes/header.php');
             $fileextstored = array('png', 'jpg', 'jpeg',);
 
             if (in_array($filecheck, $fileextstored)) {
-                $destinationfile = '../vidioimgpost/' . $filename;
+                $destinationfile = '../assets/image/' . $filename;
                 move_uploaded_file($filetmp, $destinationfile);
             }
 
@@ -46,8 +46,8 @@ include(__DIR__ . './../includes/header.php');
             if (!$sql) {
                 echo mysqli_error($conn);
             } else {
+                header ("Location:" . BASE_URL . "/blogcategory/index.php");
                 echo "Updated Successfully!";
-                include('./index.php');
             }
         } else { ?>
 
@@ -116,14 +116,14 @@ include(__DIR__ . './../includes/header.php');
                                                 placeholder="Enter Your Description" autofocus required />
                                         </div>
 
-                                        <div class='input-form my-2'>
+                                        <!-- <div class='input-form my-2'>
                                             <label class='form-label' for='fp-default'>Status(dactive/active)</label>
                                             <div class='form-check form-switch form-check-primary'>
                                                 <input type='checkbox' id='status' value='1' name='status'
                                                     class='form-check-input' checked>
                                                 <label class='form-check-label' for='status'></label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <!--End Form Field  -->
                                         <hr>
                                      
@@ -135,11 +135,14 @@ include(__DIR__ . './../includes/header.php');
                                             <a href="./index.php" class="btn btn-dark float-end"><b>Back</b></a>
                                         </div>
 
-                                        <?php } ?>
                                     </form>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-sm-4">
+                            <img src="<?php echo $row["image"]; ?>" class="w-100 box">
+                        </div>
+                        <?php } ?>
                         <!-- /Bootstrap Validation -->
                     </div>
                 </section>

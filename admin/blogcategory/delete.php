@@ -12,6 +12,6 @@ if (mysqli_query($conn, $sql)) {
   echo "Error deleting record: " . mysqli_error($conn);
 }
 
-header("location:../blogcategory/index.php");
+header("location:" . BASE_URL . "/blogcategory/index.php");
 
 ?>

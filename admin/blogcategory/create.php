@@ -21,7 +21,7 @@ include(__DIR__ . './../includes/header.php');
                 echo mysqli_error($conn);
             } else {
                 
-            header ("Location:" . BASE_URL . "/dashboard/index.php");
+            header ("Location:" . BASE_URL . "/blogcategory/index.php");
                 // header("location:./index.php");
                 echo "Records added successfully.";
             }

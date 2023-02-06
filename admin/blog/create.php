@@ -29,7 +29,7 @@ include(__DIR__ . './../includes/header.php');
             $fileextstored = array('png', 'jpg', 'jpeg',);
 
             if (in_array($filecheck, $fileextstored)) {
-                $destinationfile = '../vidioimgpost/' . $filename;
+                $destinationfile = '../assets/image/' . $filename;
                 move_uploaded_file($filetmp, $destinationfile);
             }
 
@@ -39,8 +39,8 @@ include(__DIR__ . './../includes/header.php');
             if (!$sql) {
                 echo mysqli_error($conn);
             } else {
+                header("location:" . BASE_URL . "/index.php");
                 echo "Records added successfully.";
-                header("location:./index.php");
             }
         }
 

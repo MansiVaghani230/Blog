@@ -31,14 +31,15 @@ include(__DIR__ . './../database.php');
     </head>
     <body class="sb-nav-fixed">
         <?php
-            include(__DIR__ .'../navbar-top.php');
+            require_once(__DIR__ .'../navbar-top.php');
         ?>
         <div id="layoutSidenav">
         <?php
-            include(__DIR__ .'../sidebar.php');
+            require_once(__DIR__ .'../sidebar.php');
         ?>
           <div id="layoutSidenav_content">
                 <main>
                 
+              
 
 
