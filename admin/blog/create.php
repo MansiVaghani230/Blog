@@ -29,7 +29,7 @@ include(__DIR__ . './../includes/header.php');
             $fileextstored = array('png', 'jpg', 'jpeg',);
 
             if (in_array($filecheck, $fileextstored)) {
-                $destinationfile = '../vidioimgpost/' . $filename;
+                $destinationfile = '../assets/image/' . $filename;
                 move_uploaded_file($filetmp, $destinationfile);
             }
 
