@@ -13,7 +13,9 @@ include(__DIR__ . './../includes/header.php');
             $name = $_POST['name'];
             $phone = $_POST['phone'];
             $email = $_POST['email'];
-            $sql = mysqli_query($conn, "UPDATE `contactus` SET `name`,`phone`,`email`='$name','$phone','$email' WHERE `id`='$id'");
+            // $sql = mysqli_query($conn, "UPDATE `contactus` SET `name`,`phone`,`email`='$name','$phone','$email' WHERE `id`='$id'");
+            $sql = mysqli_query($conn, "UPDATE `contactus` SET `name`='$name',
+            `phone`='$phone',`email`='$email' WHERE `id`='$id'");
             if (!$sql) {
                 echo mysqli_error($conn);
             } else {
