@@ -1,4 +1,18 @@
 <?php
+
+include(__DIR__ . './variable.php');
+
+session_start();
+ if(!isset($_SESSION['member_name']) && !isset($_SESSION['member_pass'])){
+    header ("Location:" . BASE_URL . "/login.php");
+ }
+
+//$_SESSION['member_name'] = 'jkdobariya';
+//$_SESSION['member_pass'] = md5('Admin@321');
+
+
+?>
+<?php
 // include(__DIR__.'..\database.php');
 include(__DIR__ . './../database.php');
 ?>

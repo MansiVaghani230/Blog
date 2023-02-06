@@ -11705,7 +11705,7 @@ svg.svg-inline--fa.fa-eye {
 }
 input.datatable-input {
   border-radius: 20px !important;
-  border-color:#b3b3b3;
+  border: 1px solid #b3b3b3 !important;
   outline: none;
 }
 /* jinal  */

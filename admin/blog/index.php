@@ -24,14 +24,14 @@ include(__DIR__ . './../includes/header.php');
                 <tbody>
                     <tr>
                         <?php
-                                $sql = "SELECT * from blog";
+                                $sql = "SELECT B.*, C.category_name FROM blog AS B LEFT JOIN blogcategory AS C ON B.category_id = C.id";
                                 $query = mysqli_query($conn, $sql);
                                 while ($row = mysqli_fetch_assoc($query)) {
                             ?>
                         <td><?php echo $row['id']; ?></td>
                         <td> <img src="<?php echo $row["image"]; ?>" height=100px; width="100px;"></td>
                         <td><?php echo $row['title']; ?></td>
-                        <td><?php echo $row['category_id']; ?></td>
+                        <td><?php echo $row['category_name']; ?></td>
                         <td><?php echo $row['description']; ?></td>
                         <td>
 
