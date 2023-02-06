@@ -1,0 +1,117 @@
+.my_awsome_ring{
+    p{
+        margin-bottom:0 !important;
+    }
+}
+
+
+// MAIN SECTION
+// MY AWSOME RING SECTION
+.my_awsome_ring{
+    .list-group-item {
+     
+        border: none !important;
+    }
+    .ringcategory{
+        .banner_add{
+            background-image: url('../image/banner.png');
+         background-repeat: no-repeat;
+         background-size: cover;
+         padding: 89px;
+         margin: 30px;
+         background-color: #ffffff;
+      opacity: 0.5;
+      border-radius: 10px;
+      margin: 0 !important;
+      
+       }
+       img{
+           max-width: 100%;
+        //    height: 100%
+       }
+    }
+  
+}
+// ROUND CIRCLE
+.rounded_circle{
+    width: 20px;
+    height: 20px;
+    line-height: 40px;
+        text-align: center;
+    }
+
+// BIRTHDAY GIFT SECTION
+.giftsec_img{
+    position: relative;
+}
+.gift_text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.438); /* Black background with 0.5 opacity */
+    color: #000000;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  }
+  .gift_text2{
+       padding-top: 250px;
+  }
+
+
+//   GIFT SECTION
+  .giftrow{
+    img{
+      width: 100%;
+    }
+    position: relative;
+    .giftfont{
+      position:absolute;
+      top:50%;
+      left:26%;
+    }
+    }
+
+    // BIRTHDAY GIFT SECTION
+.giftsec_img{
+    position: relative;
+}
+.gift_text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.438);
+    color: #000000;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  }
+  .gift_text2{
+       padding-top: 250px;
+  }
+
+
+  .product .sale {
+    top: 4%;
+    left: 6%;
+    background-color: #eeeeee;
+    color: #000000;
+  }
+  .buttons{
+    .btn{
+      background-color: white;
+      color: #010101;
+      border: 1px solid #010101 ;
+    }
+  }
+
+  .buttons{
+    .btn:hover{
+      background-color: white;
+      color: #010101;
+      border: 1px solid #010101 ;
+    }
+  }
+
+  .colors{
+      color: #6f3939!important;
+  }
+  
