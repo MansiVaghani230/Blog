@@ -37,16 +37,33 @@ include('./admin/database.php');
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-center d-flex" id="navbarNavAltMarkup">
-                    <?php
-                      $sql = "SELECT * FROM blogcategory Where show_in_nav = 'y'  LIMIT 10";
-                      $query = mysqli_query($conn, $sql);
-                      while ($row = mysqli_fetch_assoc($query)) {
-                    ?>
-                      <div class="navbar-nav py-2">
-                        <a class="nav-link" href="index.php"><?php echo $row['category_name']; ?></a>
-                      </div>
-                      <?php } ?>
+                    <div class="collapse navbar-collapse justify-content-center d-flex menu" id="navbarNavAltMarkup">
+                    <div class="col-md-12">
+              <?php
+                // include "config.php";
+
+                    if(isset($_GET['cid'])){
+                      $cat_id = $_GET['cid'];
+                    }
+                    $sql = "SELECT * FROM blogcategory  Where show_in_nav = 'y'  LIMIT 10";
+                    $result = mysqli_query($conn, $sql);
+                    if(mysqli_num_rows($result) > 0){
+                      $active = "";
+                  ?>
+                     <div class="navbar-nav justify-content-center py-2">
+                      <?php while($row = mysqli_fetch_assoc($result)) {
+                        if(isset($_GET['cid'])){
+                          if($row['id'] == $cat_id){
+                            $active = "active";
+                          }else{
+                            $active = "";
+                          }
+                        }
+                        echo "<a class='nav-link' href='cryptoblog.php?cid={$row['id']}'>{$row['category_name']}</a>";
+                      } ?>
+                </div>
+                <?php } ?>
+            </div>
                     </div>   
                 </nav>
               </div>
