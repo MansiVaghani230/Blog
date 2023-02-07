@@ -24,7 +24,7 @@ include('./admin/database.php');
                   <div class="header-logo">
                     <a href="index.php" class="header-logo-container sh-table-small">
                       <div class="sh-table-cell">
-                        <h1 class="">Probitmine</h1>
+                      <a class='nav-link' href="welcome.php"><h1 class="">Probitmine</h1></a>
                         <!-- <img class="sh-standard-logo" src="image/news-logo.png" alt="Gillion News Demo"> -->
                       </div>
                     </a>
@@ -51,6 +51,7 @@ include('./admin/database.php');
                       $active = "";
                   ?>
                      <div class="navbar-nav justify-content-center py-2">
+                      <a class='nav-link' href="welcome.php">Home</a>
                       <?php while($row = mysqli_fetch_assoc($result)) {
                         if(isset($_GET['cid'])){
                           if($row['id'] == $cat_id){

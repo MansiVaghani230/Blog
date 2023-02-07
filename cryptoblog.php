@@ -7,19 +7,19 @@ include('./header.php');
                 <div class="col-md-12 col-sm-12">
                     <div class="light_border">
                         <div class="headline">
-                            <h2 class="mb-0">News</h2>
+                            <?php
+                                if(isset($_GET['cid'])){
+                                $cat_id = $_GET['cid'];
+                                $sql1 = "SELECT * FROM blogcategory WHERE id = {$cat_id}";
+                                $result1 = mysqli_query($conn, $sql1) or die("Query Failed.");
+                                $row1 = mysqli_fetch_assoc($result1);
+                                ?>
+                                <h2 class="page-heading mb-0"><?php echo $row1['category_name']; ?></h2>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <?php
-                    if(isset($_GET['cid'])){
-                    $cat_id = $_GET['cid'];
-                    $sql1 = "SELECT * FROM blogcategory WHERE id = {$cat_id}";
-                    $result1 = mysqli_query($conn, $sql1) or die("Query Failed.");
-                    $row1 = mysqli_fetch_assoc($result1);
-                    ?>
                     <?php
                         $limit = 3;
                         if(isset($_GET['page'])){
@@ -38,8 +38,8 @@ include('./header.php');
                 <div class="col-sm-4">
                     <div class="wrapper">
                         <div class="box vintage">
-                        <a class="post-img" href="cryptoblog.php?id=<?php echo $row['id']; ?>"><img class="w-100" src="admin/upload/<?php echo $row['image']; ?>" alt=""/></a>
-                        <h2 class="mt-3 fw-bold anchorlink"><a  href='cryptoblog.php?id=<?php echo $row['id']; ?>'><?php echo $row['title']; ?></a></h2>
+                        <a class="post-img" href="blog.php?id=<?php echo $row['id']; ?>"><img class="w-100" src="admin/upload/<?php echo $row['image']; ?>" alt=""/></a>
+                        <h2 class="mt-3 fw-bold anchorlink"><a  href='blog.php?id=<?php echo $row['id']; ?>'><?php echo $row['title']; ?></a></h2>
                         </div>
                     </div>
                 </div>
@@ -47,6 +47,8 @@ include('./header.php');
                             }else{
                             echo "<h2>No Record Found.</h2>";
                             }
+
+                            
                                 }
                         ?>
             </div>
