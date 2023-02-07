@@ -81,8 +81,7 @@
             <div class="container border-bottom border-secondary"></div>
             <div class="row py-3 align-items-center">
                 <div class="col-lg-6 col-sm-12">
-                    <p class="text-secondary mb-0">Copyright
-                        <img src="image/copyright.png"> 2022 Probitmine
+                    <p class="text-secondary mb-0">Copyright &copy; 2022 Probitmine
                     </p>
                 </div>
                 <div class="col-lg-6 social-menu align-items-center">

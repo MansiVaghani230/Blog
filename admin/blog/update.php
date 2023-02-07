@@ -116,7 +116,7 @@ include(__DIR__ . './../includes/header.php');
                                             <label class="form-label" for="image">Image<span
                                                     class="text-danger">*</span></label>
                                             <input type="file" id="image" name="image" class="form-control "
-                                                value="<?php echo $row['image']; ?>" placeholder="Enter Your image"
+                                                value="" placeholder="Enter Your image"
                                                 autofocus required />
                                         </div>
                                         <div class="input-form my-2">
