@@ -12,7 +12,7 @@ include(__DIR__ . './../includes/header.php');
             $id = $_POST['id'];
             $category_name = $_POST['category_name'];
             $category_name = $_POST['category_name'];
-            $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `category_name`='$category_name', 'show_in_nav' = '$show_in_nav' WHERE `id`='$id'");
+            $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `category_name`='$category_name', `show_in_nav` = '$show_in_nav' WHERE `id`='$id'");
             if (!$sql) {
                 echo mysqli_error($conn);
             } else {

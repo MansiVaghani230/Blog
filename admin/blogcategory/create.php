@@ -15,7 +15,7 @@ include(__DIR__ . './../includes/header.php');
             $category_name = $_POST['category_name'];
             $show_in_nav = $_POST['show_in_nav'];
 
-            $sql = mysqli_query($conn, "INSERT INTO `blogcategory`(`category_name`,'show_in_nav') VALUES ('$category_name', '$show_in_nav')");
+            $sql = mysqli_query($conn, "INSERT INTO `blogcategory`(`category_name`,`show_in_nav`) VALUES ('$category_name', '$show_in_nav')");
 
             if (!$sql) {
                 echo mysqli_error($conn);
@@ -58,8 +58,8 @@ include(__DIR__ . './../includes/header.php');
                                         <div class="input-form my-2">
                                             <label class="form-label" for="show_in_nav">Show Navigation<span
                                                     class="text-danger">*</span></label>
-                                            <input type="radio" id="show_in_nav" name="show_in_nav"/>Yes
-                                            <input type="radio" id="show_in_nav" name="show_in_nav"/>No
+                                            <input type="radio" id="show_in_nav" value="y" name="show_in_nav"/>Yes
+                                            <input type="radio" id="show_in_nav" value="n" name="show_in_nav"/>No
                                         </div>
                                         <div class="input-form my-2">
                                             <hr>
