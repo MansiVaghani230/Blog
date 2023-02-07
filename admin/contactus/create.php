@@ -16,7 +16,7 @@ include(__DIR__ . './../includes/header.php');
             $phone = $_POST['phone'];
             $email = $_POST['email'];
 
-            $sql = mysqli_query($conn, "INSERT INTO `contactus`(`name`,`phone`,`email`,) VALUES ('$name','$phone','$email')");
+            $sql = mysqli_query($conn, "INSERT INTO `contactus`(`name`,`phone`,`email`) VALUES ('$name','$phone','$email')");
 
             if (!$sql) {
                 echo mysqli_error($conn);
