@@ -95,11 +95,22 @@ include(__DIR__ . './../includes/header.php');
                                                 autofocus required />
                                         </div>
                                         <div class="input-form my-2">
-                                            <label class="form-label" for="category_id">category_id<span
+                                            <label class="form-label" for="category_id">Category<span
                                                     class="text-danger">*</span></label>
-                                            <input type="text" id="category_id" name="category_id" class="form-control "
-                                                value="<?php echo $row['category_id']; ?>" placeholder="Enter Your Name"
-                                                autofocus required />
+                                            <!-- <input type="text" id="category_id" category_id="category_id" class="form-control " value="" placeholder="Enter Your category_id" autofocus required />  -->
+                                            <select name="category_id" id="category_id"
+                                                class="form-select form-control">
+                                                <?php
+                                                $records = mysqli_query($conn, "SELECT category_name,id  From blogcategory");  // Use select query here
+                                                while ($data = mysqli_fetch_array($records))
+                                                {
+                                                    echo "<option value='" . $data['id'] . "'>" . $data['category_name'] . "</option>";  // displaying data in option menu
+                                                }
+                                            ?>
+                                                <!-- <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option> -->
+                                            </select>
                                         </div>
                                         <div class="input-form my-2">
                                             <label class="form-label" for="image">Image<span
