@@ -48,12 +48,6 @@
                                     <form name="blogcategory" id="blogcategory" class="validate-form1 needs-validation"
                                         action="" method="POST" enctype="multipart/form-data" novalidate>
                                         <!--Start Form Field  -->
-
-
-                                        <h1>Classic editor</h1>
-                                        <div id="editor">
-                                            <p>This is some sample content.</p>
-                                        </div>
                                         <div class="input-form my-2">
                                             <label class="form-label" for="category_name">category_name<span
                                                     class="text-danger">*</span></label>
@@ -68,9 +62,7 @@
                                             <input type="radio" id="show_in_nav" value="n" name="show_in_nav"/>No
                                         </div>
 
-                                        <div id="editor">
-        <p>This is some sample content.</p>
-    </div>
+                                      
                                         <div class="input-form my-2">
                                             <hr>
                                             <div class="input-form my-1">
