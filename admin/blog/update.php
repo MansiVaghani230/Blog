@@ -13,8 +13,6 @@ include(__DIR__ . './../includes/header.php');
       
 
         if (isset($_POST['submit'])) {
-
-
             $id = $_POST['id'];
             $category_id = $_POST['category_id'];
             $title = $_POST['title'];
