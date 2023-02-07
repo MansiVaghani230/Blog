@@ -38,10 +38,9 @@ include(__DIR__ . './../includes/header.php');
 
             if (!$sql) {
                 echo mysqli_error($conn);
-            } else {
-                header("location:" . BASE_URL . "/index.php");
-                echo "Records added successfully.";
             }
+            header("location: ./index.php");
+        exit();
         }
 
 
@@ -100,8 +99,10 @@ include(__DIR__ . './../includes/header.php');
                                         <div class="input-form my-2">
                                             <label class="form-label" for="description">Description<span
                                                     class="text-danger">*</span></label>
-                                            <input type="text" id="description" name="description" class="form-control "
-                                                value="" placeholder="Enter Your Description" autofocus required />
+                                                    <!-- <div id="editor"> -->
+                                                        <textarea  id="editor" name="description"></textarea>
+                                            <!-- <input type="text" id="description" name="description" class="form-control "
+                                                value="" placeholder="Enter Your Description" autofocus required /> -->
                                         </div>
                                         <!--End Form Field  -->
                                         <hr>
@@ -130,6 +131,16 @@ include(__DIR__ . './../includes/header.php');
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+     <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
     </script>
 </body>
 

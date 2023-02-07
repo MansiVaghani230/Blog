@@ -22,7 +22,7 @@ include(__DIR__ . './../includes/header.php');
                 <tbody>
                     <tr>
                         <?php
-                        $sql = "SELECT * from contactus";
+                                $sql = "SELECT * from contactus";
                                 $query = mysqli_query($conn, $sql);
                                 while ($row = mysqli_fetch_assoc($query)) {
                             ?>
@@ -39,7 +39,7 @@ include(__DIR__ . './../includes/header.php');
                          
                         </td>
                     </tr>
-                    <?php } ?>  
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

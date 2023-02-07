@@ -68,32 +68,42 @@ include "database.php";
 	}
 
 	?>
-	<div class="page">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="row">
-						<div class="col-sm-4 offset-sm-4">
-							<div id="loginpad">
+	  <section class="vh-100">
+		  <div class="container py-5 h-100">
+		<!-- <div class="card"> -->
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+		<img src="../assets/image/draw2.svg" class="img-fluid" alt="Phone image">
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
 								<!--<div style="text-align:center; margin: 20px 0; "><img src="./assets/img/logo.png" width="250px" /></div>-->
 
 								<?php if(isset($error)) {echo "<div id='error'><strong><strong>$error</div>";} ?>
 
 									<div id="login">
 										<form action="" method="POST" encryption="">
-											&nbsp;Username<br />
-											<input type="text" class="form-control form-control-sm" name="username" value="" autofocus="autofocus" /><br />
-											&nbsp;Password<br />
-											<input type="password" class="form-control form-control-sm" name="password" value="" /><br /><span style="height:5px;display:block;"></span>
-											<input type="submit" class="btn btn-primary btn-sm btn-block" name="submit" value="Login" />
+										 <!-- Email input -->
+										 <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example13">Username</label>
+              <input type="text" id="form1Example13" name="username" value="" autofocus="autofocus" class="form-control form-control-lg" />
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example23">Password</label>
+              <input type="password" id="form1Example23" name="password" class="form-control form-control-lg" />
+            </div>
+  
+  
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-dark btn-lg btn-block">Sign in</button>
 										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+										</div>
+      </div>
+    </div>
+    </div>
+    <!-- </div> -->
+  </section>
 		</div>
 		<script src="./assets/js/jquery.js"></script>
 		<script src="./assets/js/bootstrap.min.js"></script>

@@ -1,5 +1,5 @@
 <?php
-// include(__DIR__.'..\database.php');
+include(__DIR__.'/../includes/variable.php');
 include(__DIR__ . './../database.php');
 
 
@@ -13,7 +13,7 @@ if (mysqli_query($conn, $sql)) {
   echo "Error deleting record: " . mysqli_error($conn);
 }
 
-header("location: " . BASE_URL . "/index.php");
+header("location: " . BASE_URL . "./blog/index.php");
 
 
 ?>

@@ -6,6 +6,15 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="../assets/js/datatables-simple-demo.js"></script>
         <script src="../assets/js/script.js"></script>
-        <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+        <!-- <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script> -->
+        <script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js"></script>
+
+        <script>
+                 ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                console.error( error );
+                } );
+        </script>
 </body>
 </html>

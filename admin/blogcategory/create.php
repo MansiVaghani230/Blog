@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <?php
-include(__DIR__ . './../includes/header.php');
+    include(__DIR__ . './../includes/header.php');
 ?>
     <?php
    
@@ -48,6 +48,12 @@ include(__DIR__ . './../includes/header.php');
                                     <form name="blogcategory" id="blogcategory" class="validate-form1 needs-validation"
                                         action="" method="POST" enctype="multipart/form-data" novalidate>
                                         <!--Start Form Field  -->
+
+
+                                        <h1>Classic editor</h1>
+                                        <div id="editor">
+                                            <p>This is some sample content.</p>
+                                        </div>
                                         <div class="input-form my-2">
                                             <label class="form-label" for="category_name">category_name<span
                                                     class="text-danger">*</span></label>
@@ -61,6 +67,10 @@ include(__DIR__ . './../includes/header.php');
                                             <input type="radio" id="show_in_nav" value="y" name="show_in_nav"/>Yes
                                             <input type="radio" id="show_in_nav" value="n" name="show_in_nav"/>No
                                         </div>
+
+                                        <div id="editor">
+        <p>This is some sample content.</p>
+    </div>
                                         <div class="input-form my-2">
                                             <hr>
                                             <div class="input-form my-1">
@@ -88,6 +98,13 @@ include(__DIR__ . './../includes/header.php');
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
     </script>
 </body>
 

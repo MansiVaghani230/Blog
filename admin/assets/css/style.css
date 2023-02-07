@@ -11715,3 +11715,10 @@ input.datatable-input {
   border-radius: 0.375rem;
   position: relative;
 }
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
