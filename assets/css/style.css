@@ -446,6 +446,7 @@ footer ul li a{
     background-color: #fff;
     text-align: center;
     transition: .6s;
+    padding : 7px;
     box-shadow: 0 5px 4px rgba(0,0,0,.5);
 }
 
