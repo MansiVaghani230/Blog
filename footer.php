@@ -17,9 +17,13 @@
                             <a class="text-secondary" href="about-us.php">About Us</a>
                         </li>
                         <li>
-                            <a class="text-secondary" href="service.php">Services</a>
+                            <a class="text-secondary" href="contactus.php">Contact Us</a>
                         </li>
 
+                        <li>
+                            <a class="text-secondary" href="service.php">Services</a>
+                        </li>
+                  
                         <li>
                             <a class="text-secondary" href="terms-condition.php">Terms &amp; Conditions</a>
                         </li>
@@ -36,9 +40,7 @@
                             <a class="text-secondary" href="index.php">Home</a>
                         </li>
 
-                        <li>
-                            <a class="text-secondary" href="index.php">Contact</a>
-                        </li>
+                      
 
                         <li>
                             <a class="text-secondary" href="news.php">News</a>
