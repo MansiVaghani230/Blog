@@ -67,13 +67,13 @@ include(__DIR__ . './../includes/header.php');
                                         method="POST" enctype="multipart/form-data" novalidate>
                                         <!--Start Form Field  -->
                                         <div class="input-form my-2">
-                                            <label class="form-label" for="title">title<span
+                                            <label class="form-label" for="title">Title<span
                                                     class="text-danger">*</span></label>
                                             <input type="text" id="title" name="title" class="form-control " value=""
                                                 placeholder="Enter Your title" autofocus required />
                                         </div>
                                         <div class="input-form my-2">
-                                            <label class="form-label" for="category_id">category_id<span
+                                            <label class="form-label" for="category_id">Blog Category<span
                                                     class="text-danger">*</span></label>
                                             <!-- <input type="text" id="category_id" category_id="category_id" class="form-control " value="" placeholder="Enter Your category_id" autofocus required />  -->
                                             <select name="category_id" id="category_id"

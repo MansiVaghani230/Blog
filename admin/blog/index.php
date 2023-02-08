@@ -13,12 +13,12 @@ include(__DIR__ . './../includes/header.php');
             <table id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>id</th>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Category</th>
-                        <th>Description</th>
-                        <th>Actions</th>
+                        <th>ID</th>
+                        <th>IMAGE</th>
+                        <th>TITLE</th>
+                        <th>CATEGORY</th>
+                        <th>DESCRIPTION</th>
+                        <th>ACTIONS</th>
                     </tr>
                 </thead>
                 <tbody>

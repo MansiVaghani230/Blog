@@ -1,4 +1,5 @@
 <?php
+include(__DIR__.'/../includes/variable.php');
 include(__DIR__ . './../database.php');
 
 $id = $_GET['id'];

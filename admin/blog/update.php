@@ -88,14 +88,14 @@ include(__DIR__ . './../includes/header.php');
                                         <!-- <input type="text" id="id" name="id" placeholder="id..." value="<?php echo $row['id']; ?>" readonly> -->
 
                                         <div class="input-form my-2">
-                                            <label class="form-label" for="title">title<span
+                                            <label class="form-label" for="title">Title<span
                                                     class="text-danger">*</span></label>
                                             <input type="text" id="title" name="title" class="form-control "
                                                 value="<?php echo $row['title']; ?>" placeholder="Enter Your Name"
                                                 autofocus required />
                                         </div>
                                         <div class="input-form my-2">
-                                            <label class="form-label" for="category_id">Category<span
+                                            <label class="form-label" for="category_id">Blog Category<span
                                                     class="text-danger">*</span></label>
                                             <!-- <input type="text" id="category_id" category_id="category_id" class="form-control " value="" placeholder="Enter Your category_id" autofocus required />  -->
                                             <select name="category_id" id="category_id"
@@ -119,12 +119,12 @@ include(__DIR__ . './../includes/header.php');
                                                 value="" placeholder="Enter Your image"
                                                 autofocus required />
                                         </div>
+                                       
+
                                         <div class="input-form my-2">
                                             <label class="form-label" for="description">Description<span
                                                     class="text-danger">*</span></label>
-                                            <input type="text" id="description" name="description" class="form-control "
-                                                value="<?php echo $row['description']; ?>"
-                                                placeholder="Enter Your Description" autofocus required />
+                                                        <textarea  id="editor" name="description"></textarea>
                                         </div>
 
                                         <!-- <div class='input-form my-2'>
@@ -169,6 +169,13 @@ include(__DIR__ . './../includes/header.php');
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
     </script>
 </body>
 
