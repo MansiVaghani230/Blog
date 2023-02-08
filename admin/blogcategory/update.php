@@ -11,7 +11,7 @@ include(__DIR__ . './../includes/header.php');
         if (isset($_POST['submit'])) {
             $id = $_POST['id'];
             $category_name = $_POST['category_name'];
-            $category_name = $_POST['category_name'];
+            $show_in_nav = $_POST['show_in_nav'];
             $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `category_name`='$category_name', `show_in_nav` = '$show_in_nav' WHERE `id`='$id'");
             if (!$sql) {
                 echo mysqli_error($conn);
