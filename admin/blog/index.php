@@ -17,7 +17,6 @@ include(__DIR__ . './../includes/header.php');
                         <th>IMAGE</th>
                         <th>TITLE</th>
                         <th>CATEGORY</th>
-                        <th>DESCRIPTION</th>
                         <th>ACTIONS</th>
                     </tr>
                 </thead>
@@ -32,7 +31,6 @@ include(__DIR__ . './../includes/header.php');
                         <td> <img src="<?php echo $row["image"]; ?>" height=100px; width="100px;"></td>
                         <td><?php echo $row['title']; ?></td>
                         <td><?php echo $row['category_name']; ?></td>
-                        <td><?php echo $row['description']; ?></td>
                         <td>
 
                             <a href="./update.php?id=<?php echo $row['id']; ?>"><button class="btn btn-success"><i
