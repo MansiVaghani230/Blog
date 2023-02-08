@@ -32,7 +32,7 @@ include('./header.php');
   
     <p>We may share the information obtained from Google Analytics with business partners who are interested in advertising on our website. The information shared with these business partners will not contain any personally identifying information (Google does not provide us with direct access to the data and therefore we cannot see this information).</p>
   
-    <p>You can opt-out of having your information collected by Google Analytics by downloading the Google Analytics opt-out browser add-on provided by Google. This will prevent your information being used by Google Analytics. Doing this will not affect your ability to use our Site in any way. You can download the opt-out browser add-on <a href="https://tools.google.com/dlpage/gaoptout">here</a>. We also honor the Do Not Track header and will not track visitors who have Do Not Track switched on.</p>
+    <p>You can opt-out of having your information collected by Google Analytics by downloading the Google Analytics opt-out browser add-on provided by Google. This will prevent your information being used by Google Analytics. Doing this will not affect your ability to use our Site in any way. You can download the opt-out browser add-on <a href="https://tools.google.com/dl/gaoptout">here</a>. We also honor the Do Not Track header and will not track visitors who have Do Not Track switched on.</p>
   
     <h2 id="changes" class=" anchorAf"><a href="#changes"></a>Changes to this Privacy Policy</h2>
     <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on the Site. You are advised to review this privacy policy periodically for any changes.</p>

@@ -23,9 +23,9 @@ include('./header.php');
       if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_assoc($result)) {
       ?>
-      <div class="offset-1 col-sm-10 hover_color">
+      <div class="offset-1 col-sm-10">
       <h2 class="fw-bold py-3 justify-content-center"> <?php echo $row['title']; ?></h2>
-        <img class="single-feature-image" src="admin/upload/<?php echo $row['image']; ?>" alt=""/>
+        <img class="single-feature-image w-100" src="admin/upload/<?php echo $row['image']; ?>" alt=""/>
         <p class="pt-4"> <?php echo $row['description']; ?></p>
         <br>
       </div>
