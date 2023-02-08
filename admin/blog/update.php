@@ -122,9 +122,9 @@ include(__DIR__ . './../includes/header.php');
                                        
 
                                         <div class="input-form my-2">
-                                            <label class="form-label" for="description">Description<span
+                                            <label class="form-label" for="description" >Description<span
                                                     class="text-danger">*</span></label>
-                                                        <textarea  id="editor" name="description"></textarea>
+                                            <textarea  id="editor" name="description" value="<?php echo $row['description']; ?>"></textarea>
                                         </div>
 
                                         <!-- <div class='input-form my-2'>
@@ -136,6 +136,7 @@ include(__DIR__ . './../includes/header.php');
                                             </div>
                                         </div> -->
                                         <!--End Form Field  -->
+
                                         <hr>
                                      
                                         <div class="input-form my-1">

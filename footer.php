@@ -17,7 +17,7 @@
                             <a class="text-secondary" href="about-us.php">About Us</a>
                         </li>
                         <li>
-                            <a class="text-secondary" href="index.php">Services</a>
+                            <a class="text-secondary" href="service.php">Services</a>
                         </li>
 
                         <li>
