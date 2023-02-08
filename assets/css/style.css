@@ -238,6 +238,8 @@ footer ul li a{
 
 figure {
 	overflow: hidden;
+    border-radius: 10px;
+    max-height: 350px;
 }
 
 /* Zoom In #1 */
@@ -245,12 +247,14 @@ figure {
     text-decoration: none;
     color: #111212;
 }
+
 .hover01 figure img {
 	-webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .hover01 figure:hover img {

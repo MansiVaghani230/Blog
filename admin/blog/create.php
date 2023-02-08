@@ -12,11 +12,10 @@ include(__DIR__ . './../includes/header.php');
     <?php
         if (isset($_POST['submit'])) {
 
-
             $files = $_FILES['image'];
-            $title = $_POST['title'];
+            $title = addslashes($_POST['title']);
             $category_id = $_POST['category_id'];
-            $description = $_POST['description'];
+            $description = addslashes($_POST['description']);
 
 
             // jpg,png forment

@@ -3,7 +3,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="../dashboard/index.php">
+                            <a class="nav-link" href="<?php echo BASE_URL; ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -51,15 +51,15 @@
                                 </nav>
                             </div> -->
                             <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link" href="../blog/index.php">
+                            <a class="nav-link" href="<?php echo BASE_URL; ?>/blog/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Blog
                             </a>
-                            <a class="nav-link" href="../blogcategory/index.php">
+                            <a class="nav-link" href="<?php echo BASE_URL; ?>/blogcategory/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 BLog Category
                             </a>
-                            <a class="nav-link" href="../contactus/index.php">
+                            <a class="nav-link" href="<?php echo BASE_URL; ?>/contactus/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Contact Us
                             </a>

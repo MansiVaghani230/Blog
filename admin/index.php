@@ -1,5 +1,5 @@
 <?php
-include(__DIR__ . './../includes/header.php');
+include(__DIR__ . './includes/header.php');
 ?>
   <div class="container-fluid px-4">
                         <h1 class="my-4">Dashboard</h1>
@@ -571,6 +571,6 @@ include(__DIR__ . './../includes/header.php');
                         </div> -->
                     </div>
 <?php
-include(__DIR__ . './../includes/footer.php');
-include(__DIR__ . './../includes/script.php');
+include(__DIR__ . './includes/footer.php');
+include(__DIR__ . './includes/script.php');
 ?>

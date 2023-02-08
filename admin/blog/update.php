@@ -15,8 +15,8 @@ include(__DIR__ . './../includes/header.php');
         if (isset($_POST['submit'])) {
             $id = $_POST['id'];
             $category_id = $_POST['category_id'];
-            $title = $_POST['title'];
-            $description = $_POST['description'];
+            $title = addslashes($_POST['title']);
+            $description = addslashes($_POST['description']);
             $files = $_FILES['image'];
 
             // jpg,png forment
@@ -124,7 +124,7 @@ include(__DIR__ . './../includes/header.php');
                                         <div class="input-form my-2">
                                             <label class="form-label" for="description" >Description<span
                                                     class="text-danger">*</span></label>
-                                            <textarea  id="editor" name="description" value="<?php echo $row['description']; ?>"></textarea>
+                                            <textarea  id="editor" name="description"><?php echo $row['description']; ?></textarea>
                                         </div>
 
                                         <!-- <div class='input-form my-2'>

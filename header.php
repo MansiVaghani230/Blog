@@ -12,9 +12,7 @@
   <link href="./assets/css/owlcarouselcss/owl.theme.default.min.css" rel="stylesheet">
 </head>
 <body>
-<?php
-include('./admin/database.php');
-    ?>
+<?php include('./admin/database.php'); ?>
     <section class="sticky-top">
         <div class="container-fluid themcolor">
           <div class="container ">
@@ -32,41 +30,55 @@ include('./admin/database.php');
                 </div>
               </div>
         
-              <div class="col-lg-12 col-12 ">
-                <nav class="navbar navbar-expand-lg sh-header-standard py-0 justify-content-center onlylink">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-center d-flex menu" id="navbarNavAltMarkup">
-                    <div class="col-md-12">
-              <?php
+              <div class="col-lg-12 col-12">
+             
+              <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class='nav-link active' aria-current="page" href="index.php">Home</a>
+                      </li>
+
+                      <?php
                 // include "config.php";
 
                     if(isset($_GET['cid'])){
                       $cat_id = $_GET['cid'];
                     }
+                    
                     $sql = "SELECT * FROM blogcategory  Where show_in_nav = 'y'  LIMIT 10";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result) > 0){
                       $active = "";
-                  ?>
-                     <div class="navbar-nav justify-content-center py-2">
-                      <a class='nav-link' href="welcome.php">Home</a>
-                      <?php while($row = mysqli_fetch_assoc($result)) {
+                    
+                      while($row = mysqli_fetch_assoc($result)) {
                         if(isset($_GET['cid'])){
                           if($row['id'] == $cat_id){
                             $active = "active";
                           }else{
                             $active = "";
                           }
-                        }
-                        echo "<a class='nav-link' href='cryptoblog.php?cid={$row['id']}'>{$row['category_name']}</a>";
+                        } ?>
+                        <li class="nav-item">
+                        <!-- <a class='nav-link active' aria-current="page" href="index.php">Home</a> -->
+                        <a class='nav-link' href='cryptoblog.php?cid=<?php echo $row['id']; ?>'><?php echo $row['category_name']; ?></a>
+                      </li>
+                        <?php
+                      }
                       } ?>
+
+                    </ul>
+                    <form class="d-flex" id="search" name="search" method="GET" action="./search.php">
+                      <input class="form-control me-2" name="s" id="s" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                  </div>
                 </div>
-                <?php } ?>
-            </div>
-                    </div>   
-                </nav>
+              </nav>
               </div>
             </div>
           </div>
