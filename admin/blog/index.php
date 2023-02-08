@@ -13,30 +13,31 @@ include(__DIR__ . './../includes/header.php');
             <table id="datatablesSimple">
                 <thead>
                 <tr>
-                        <th>id</th>
-                        <th>name</th>
-                        <th>Show In</th>
-                        <th>Actions</th>
+                <th>ID</th>
+                        <th>IMAGE</th>
+                        <th>TITLE</th>
+                        <th>CATEGORY</th>
+                        <th>ACTIONS</th>
                         </tr>
                 </thead>
                 <tbody>
                 <?php
-                       include('../database.php'); 
-                        $sql = "SELECT * from blogcategory";
-                        $query = mysqli_query($conn, $sql);
-                        while ($row = mysqli_fetch_assoc($query)) {
-                    ?>
-                        <td><?php echo $row['id']; ?></td>
+                                $sql = "SELECT B.*, C.category_name FROM blog AS B LEFT JOIN blogcategory AS C ON B.category_id = C.id";
+                                $query = mysqli_query($conn, $sql);
+                                while ($row = mysqli_fetch_assoc($query)) {
+                            ?>
+                          <td><?php echo $row['id']; ?></td>
+                        <td> <img src="<?php echo $row["image"]; ?>" height=100px; width="100px;"></td>
+                        <td><?php echo $row['title']; ?></td>
                         <td><?php echo $row['category_name']; ?></td>
-                        <td><?php echo $row['show_in_nav']; ?></td>
                         <td>
-                        <a href="./update.php?id=<?php echo $row['id']; ?>"><button class="btn btn-success"><i
+                            <a href="./update.php?id=<?php echo $row['id']; ?>"><button class="btn btn-success"><i
                                         class="fa-solid fa-pen-to-square"></i></button></a>
                             <a href="./delete.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger"><i
                                         class="fa-solid fa-trash"></i></button></a>
-                          
+                         
                         </td>
-                        </tr>
+                    </tr>
                     <?php } ?>
                 </tbody>
             </table>
