@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Crypto blogcategory</title>
+    <title>Crypto blog Category</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <?php
@@ -39,7 +39,7 @@
                         <div class="col-md-8 col-12">
                             <div class="card">
                                 <div class="card-header pb-0">
-                                    <h5 class="card-title">Create BlogCategory</h5>
+                                    <h5 class="card-title">Create Blog Category</h5>
                                     <div class=" float-end">
                                         <!-- <button name="submit" type="submit" value="submit" class="btn btn-primary">Submit</botton></br> -->
                                     </div>
@@ -49,20 +49,20 @@
                                         action="" method="POST" enctype="multipart/form-data" novalidate>
                                         <!--Start Form Field  -->
                                         <div class="input-form my-2">
-                                            <label class="form-label" for="category_name">category_name<span
+                                            <label class="form-label" for="category_name">Blog Category<span
                                                     class="text-danger">*</span></label>
                                             <input type="text" id="category_name" name="category_name"
-                                                class="form-control " value="" placeholder="Enter Your category_name"
+                                                class="form-control " value="" placeholder="Enter Your Category Name"
                                                 autofocus required />
                                         </div>
                                         <div class="input-form my-2">
                                             <label class="form-label" for="show_in_nav">Show Navigation<span
                                                     class="text-danger">*</span></label>
-                                            <input type="radio" id="show_in_nav" value="y" name="show_in_nav"/>Yes
-                                            <input type="radio" id="show_in_nav" value="n" name="show_in_nav"/>No
+                                                    <div>
+                                            <input type="radio" id="show_in_nav" value="y" name="show_in_nav"/> Yes
+                                            <input type="radio" id="show_in_nav" value="n" name="show_in_nav"/> No
                                         </div>
-
-                                      
+                                        </div>
                                         <div class="input-form my-2">
                                             <hr>
                                             <div class="input-form my-1">

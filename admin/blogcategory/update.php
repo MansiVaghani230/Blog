@@ -42,7 +42,7 @@ include(__DIR__ . './../includes/header.php');
                     <div class="col-md-8 col-12">
                         <div class="card">
                             <div class="card-header pb-0">
-                                <h4 class="card-title">Update blogcategory</h4>
+                                <h4 class="card-title">Update blog Category</h4>
                                 <div class=" float-end">
                                 <!-- <button name="submit" type="submit" value="submit" class="btn btn-primary">Submit</botton></br> -->
                                 </div>
@@ -56,15 +56,17 @@ include(__DIR__ . './../includes/header.php');
                                      <!-- <input type="text" id="id" name="id" placeholder="id..." value="<?php echo $row['id']; ?>" readonly> -->
 
                                     <div class="input-form my-2">
-                                            <label class="form-label" for="category_name">category_name<span  class="text-danger">*</span></label>
+                                            <label class="form-label" for="category_name">Category Name<span  class="text-danger">*</span></label>
                                             <input type="text" id="category_name" name="category_name" class="form-control " value="<?php echo $row['category_name']; ?>" placeholder="Enter Your Name" autofocus required /> 
                                     </div>  
                                     <div class="input-form my-2">
                                             <label class="form-label" for="show_in_nav">Show Navigation<span
                                                     class="text-danger">*</span></label>
-                                            <input type="radio" id="show_in_nav" value="y" name="show_in_nav"/>Yes
-                                            <input type="radio" id="show_in_nav" value="n" name="show_in_nav"/>No
-                                        </div>
+                                                    <div>
+                                            <input type="radio" id="show_in_nav" value="y" name="show_in_nav"/> Yes
+                                            <input type="radio" id="show_in_nav" value="n" name="show_in_nav"/> No
+                                    </div>
+                                    </div>
                                    
                                      <hr>
                                      <div class="input-form my-1">
