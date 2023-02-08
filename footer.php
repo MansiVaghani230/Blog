@@ -1,5 +1,5 @@
  <!-- FOOTER -->
-
+<section class="">
  <footer class="themcolor">
         <div class="container py-5">
             <div class="row">
@@ -96,6 +96,7 @@
             </div>
         </div>
     </footer>
+</section>
     <!-- END FOOTER -->
     <script src="./assets/js/bootstrap.bundle.js"></script>
   <script src="./assets/js/fontawesomejs/all.js"></script>
@@ -157,7 +158,7 @@
                     items: 1
                 },
                 600: {
-                    items: 30
+                    items: 3
                 },
                 1000: {
                     items: 3
@@ -165,5 +166,24 @@
             }
         })
     </script>
+
+<script>
+    $('.resentblog').owlCarousel({
+      loop: true,
+      nav: true,
+      dots: true,
+      responsive: {
+        0: {
+          items: 3
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  </script>
 </body>
     </html>

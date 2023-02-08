@@ -1,136 +1,8 @@
-/* top header  */
-
-/* .secondary-bg {
-    background-color: #000044;
-    color: #ffffff;
-}
-.top {
-    padding: 5px 0;
-    font-size: 15px;
-}
-.top ul {
-    margin: 0;
-    padding: 0;
-}
-.top .links li {
-    display: inline-block;
-    margin: 0px 10px;
-}
-
-a{
-    text-decoration: none;
-    color: #ffff
-} */
- 
-/* Middle Header  */
-
-/* .middle {
-    padding: 28px 0;
-}
-.primary-bg {
-    background-color: #1C3271;
-    color: #ffffff !important;
-}
-
-.middle form {
-    width: 100%;
-    background: #fff;
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
-}
-
-.middle form #search {
-    width: 90%;
-    height: 40px;
-    border: 0px;
-    padding: 10px;
-}
-
-.middle form #search:focus {
-    outline: none;
-}
-.middle form button {
-    position: absolute;
-    right: 0;
-    height: 40px;
-    width: 40px;
-    border: 0px;
-    background: transparent;
-}
-
-.middle ul li a i .fa-solid{
-    font-size: 28px;
-    padding: 0 15px;
-    line-height: 40px;
-}
-li .fa {
-    color: #ffffff;
-}
-
-.middle .info {
-    font-size: 10px;
-    background: #ffffff;
-    color: black;
-    width: 18px;
-    height: 18px;
-    display: inline-block;
-    text-align: center;
-    line-height: 19px;
-    border-radius: 9px;
-    position: absolute;
-    right: 10px;
-    top: 0px;
-} */
-
-/* navigation */
-/* .navigation {
-    border-top: 1px solid #071A50;
-}
-.nav-link {
-    color: #fff;
-}
-
-.nav-link:hover{
-    color: #fff;
-} */
-
-/* footer section  */
-/* footer ul li {
-   
-    line-height: 30px;
-}
-
-footer li {
-    color: #ffffff;
-}
-
-footer .middle .contact .fa {
-    margin-left: -25px;
-    margin-right: 5px;
-    max-width: 20px;
-    text-align: left;
-    display: inline-block;
-    font-size: 18px;
-}
-
-/* footer ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-} */
-
-footer .middle h5 {
-    margin-bottom: 20px;  
-  
-} */
-
-
-
-
 /* main project */
 
 /* home page  */
+
+
 .anchorlink a{ 
     text-decoration: none;
     color: #ffffff;
@@ -154,79 +26,8 @@ footer .middle h5 {
 .allpading{
     padding: 30px 0px;
 }
-img{
-    width: 100%;
-    
-}.round{
-    border-radius: 10px;
-}
 
-.grid-container {
-    display: grid;
-    grid-template-columns: auto;
-    gap: 10px;
-    padding: 30px 0px;
-    overflow: hidden;
-}
-.grid-container > div {
-    font-size: 30px;
-    position: relative;
-}
-.item1 {
-    grid-row: 1 / 2;
-    grid-column: 1 / 3;
-}
 
-.item2 {
-    grid-row: 2 / 3;
-    grid-column: 1 / 3;
-}
-.item3 {
-    grid-row: 1 / 3;
-    grid-column: 4 / 9;
-}
-.item4 {
-    grid-row: 1 / 2;
-    grid-column: 10 / 12;
-}
-.item5 {
-    grid-row: 2 / 3;
-    grid-column: 10 / 12;
-}
-
-.gradiant {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    width: 100%;
-    border-radius: 10px;
-    opacity: 0.50;
-    background: linear-gradient(to bottom,rgba(50,50,50,0) 0%,rgba(16,15,15,0.91) 89%,rgba(16,15,15,0.93) 93%);
-    transition: 1s;
-}
-
-.gallery__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px;
-}
-
-.gradiant:hover {
-    opacity: 0.80;
-}
-
-.title {
-    position: absolute;
-    bottom: 0px;
-    z-index: 1;
-    color: #fff;
-    padding-left: 22px;
-    padding-right: 22px;
-    padding-bottom: 25px;
-    width: 100%;
-}
 .title h1 {
     font-size: 20px;
     line-height: 140%;
@@ -240,24 +41,6 @@ img{
 }
 
 
-/* owl-carosol */
-/* .first img{
-    border-radius: 0.25rem!important;
-}
-
-.first p {
-    color: #7e7e7e;
-    font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-.first h2{
-    font-size: 14px;
-} */
-
-
-/* today */
-
 .light_border {
     border-bottom: 2px solid #f0f0f0;
     margin-bottom: 30px;
@@ -265,8 +48,8 @@ img{
 }
 
 .headline h2 {
+    font-size: 27px;
     font-weight: 700;
-    font-size: 24px;
     display: inline-block;
     vertical-align: top;
     position: relative;
@@ -274,7 +57,23 @@ img{
     bottom: -2px;
     border-bottom: 2px solid #505050;
 }
-   /* //mansi// */
+
+
+.txt h5 {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+/* .txt span {
+    font-size: 13px;
+    font-weight: 500;
+} */
+
+
+
+
+   /* //mansi blog page// */
 .box {
     position: relative;
     max-height: 300px;
@@ -319,8 +118,6 @@ img{
 }
 .box img {
     position: relative;
-    width: 100%;
-    height: 100%;
     z-index: 1;
     transition: all 0.3s ease-in-out;
 }
@@ -376,39 +173,21 @@ img{
     transform: translate3d(0, -30px, 0);
 }
 
-/* News  */
-.txt h5 {
-    font-size: 18px;
-    margin-top: 20px;
-    font-weight: 700;
-}
 
-.txt span {
-    font-size: 13px;
-    font-weight: 500;
-}
-
-.newblog img{
-    border-radius: 5px;
-}
-
-/* img:hover{
-background-color: aqua !important;
-} */
-
-
-
-/* End Home Page  */
 
 /* footer */
-
+footer .middle h5 {
+    margin-bottom: 20px;  
+  
+} */
 footer ul li {
-   
     line-height: 30px;
 }
 footer ul li {
   list-style: none;
   text-align: left;
+  line-height: 30px;
+
 }
 
 footer ul li a{
@@ -446,7 +225,7 @@ footer ul li a{
     background-color: #fff;
     text-align: center;
     transition: .6s;
-    padding : 7px;
+    padding : 5px;
     box-shadow: 0 5px 4px rgba(0,0,0,.5);
 }
 
@@ -454,27 +233,26 @@ footer ul li a{
    transform: translate(0, -10px);
 }
 
-/* 2 Page NEWS */
 
-.title h3 {
-    font-size: 22px;
-    line-height: 140%;
-    font-weight: 600;
-}
-
-/* jigu */
+/* singal page and welcm page */
 
 figure {
 	overflow: hidden;
 }
 
 /* Zoom In #1 */
+.hover01 a {
+    text-decoration: none;
+    color: #111212;
+}
 .hover01 figure img {
 	-webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
+    border-radius: 10px;
 }
+
 .hover01 figure:hover img {
 	-webkit-transform: scale(1.3);
 	transform: scale(1.3);
@@ -483,15 +261,16 @@ figure {
 .hover_color img:hover {
     box-shadow: 0px 0px 20px rgb(40, 39, 39);
     transition: .6s;
+  
 }
-
-/* big font  */
-
-.big_font {
-    font-size: 48px!important;
-    font-weight: 700;
-    margin-right: 15px;
-    line-height: 1;
-    float: left;
-    margin: 11px 35px;
+/* .only-img{
+    width: 440px; 
+    height: 440px;
+    object-fit: cover;
 }
+.hover_color img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+} */
