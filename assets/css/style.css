@@ -270,14 +270,10 @@ figure {
 .hover_color img {
     border-radius: 10px;
 }
-/* .only-img{
-    width: 440px; 
-    height: 440px;
-    object-fit: cover;
-}
-.hover_color img{
+
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
     width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 10px;
-} */
+}

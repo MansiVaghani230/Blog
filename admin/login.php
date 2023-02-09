@@ -58,7 +58,7 @@ include "database.php";
 		if($count==1){
 			$_SESSION['member_name']=$username;
 			$_SESSION['member_pass']=$password;
-            header ("Location:" . BASE_URL . "/dashboard/index.php");
+            header ("Location:" . BASE_URL . "/index.php");
 			echo "<meta http-equiv='refresh' content='0,index.php' />";
 			$error="Login Success";
 		}
