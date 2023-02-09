@@ -6,7 +6,7 @@ include('./header.php');
 <section>
     <div class="container pt-3">
         <div class="row justify-content-center">
-            <div class="col-lg-3 col-sm-12 ">
+            <div class="co`l-lg-3 col-sm-12 ">
                 <div class="text-center">
                     <h1 class="fw-bold my-5">About Us</h1>
                     <p class="pb-5">Probitmine Established in the year 2017, we have researched the concept of cryptocurrencies and gives 
