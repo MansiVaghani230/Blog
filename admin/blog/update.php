@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
 
-<head>
     <title>Crypto Blog</title>
     <?php
 include(__DIR__ . './../includes/header.php');
@@ -11,6 +8,17 @@ include(__DIR__ . './../includes/header.php');
       
 
         if (isset($_POST['submit'])) {
+            $errors = array();
+
+            if($_POST['title'] == null) {
+                $errors['title'] = "Title should not be empty";
+            }
+            if($_POST['category_id'] == null) {
+                $errors['category_id'] = "Category should not be empty";
+            }
+            if($_POST['image'] == null) {
+                $errors['image'] = "Image should not be empty";
+            }else{
             $id = $_POST['id'];
             $title = filter($_POST['title']);
             $category_id = filter($_POST['category_id']);
@@ -47,7 +55,9 @@ include(__DIR__ . './../includes/header.php');
                 header ("Location:/index.php");
                 echo "<meta http-equiv='refresh' content='0,index.php' />";
             }
-        } else { ?>
+        } 
+      }
+    ?>
 
     <?php
          include(__DIR__ . './../database.php');
@@ -56,10 +66,6 @@ include(__DIR__ . './../includes/header.php');
             $query = mysqli_query($conn, $sql);
 
             ?>
-    </style>
-</head>
-
-<body>
     <?php
             while ($row = mysqli_fetch_assoc($query)) {
     ?>
@@ -87,14 +93,15 @@ include(__DIR__ . './../includes/header.php');
                                         <input type="hidden" id="id" name="id" class="form-control "
                                                 value="<?php echo $row['id']; ?>" />
 
-                                        <div class="input-form my-2">
+                                        <div class="input-form my-2 <?php if($errors['title']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="title">Title<span
                                                     class="text-danger">*</span></label>
                                             <input type="text" id="title" name="title" class="form-control "
                                                 value="<?php echo $row['title']; ?>" placeholder="Enter Your Name"
                                                 autofocus required />
+                                                <p class="text-danger"><?php if($errors['title']) { echo $errors['title']; } ?></p>
                                         </div>
-                                        <div class="input-form my-2">
+                                        <div class="input-form my-2  <?php if($errors['category_id']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="category_id">Blog Category<span
                                                     class="text-danger">*</span></label>
                                             <!-- <input type="text" id="category_id" category_id="category_id" class="form-control " value="" placeholder="Enter Your category_id" autofocus required />  -->
@@ -114,13 +121,15 @@ include(__DIR__ . './../includes/header.php');
                                                 <option value="2">2</option>
                                                 <option value="3">3</option> -->
                                             </select>
+                                            <p class="text-danger"><?php if($errors['category_id']) { echo $errors['category_id']; } ?></p>
                                         </div>
-                                        <div class="input-form my-2">
+                                        <div class="input-form my-2  <?php if($errors['image']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="image">Image<span
                                                     class="text-danger">*</span></label>
                                             <input type="file" id="image" name="image" class="form-control "
                                                 value="" placeholder="Enter Your image"
                                                 autofocus required />
+                                                <p class="text-danger"><?php if($errors['image']) { echo $errors['image']; } ?></p>
                                         </div>
                                        
 
@@ -164,7 +173,7 @@ include(__DIR__ . './../includes/header.php');
             </div>
         </div>
     </div>
-    <?php } ?>
+    <?php  ?>
     <script>
         ClassicEditor
             .create( document.querySelector( '#editor' ) )
@@ -172,6 +181,6 @@ include(__DIR__ . './../includes/header.php');
                 console.error( error );
             } );
     </script>
-</body>
 
-</html>
+
+<?php include(__DIR__ . './../includes/footer.php'); ?>

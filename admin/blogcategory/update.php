@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Crypto blogcategory</title>
+
 <?php
 include(__DIR__ . './../includes/header.php');
 ?>
 <?php
   
         if (isset($_POST['submit'])) {
+            $errors = array();
+            if($_POST['category_name'] == null) {
+                $errors['category_name'] = "Category Name should not be empty";
+            }
+            if($_POST['show_in_nav'] == null) {
+                $errors['show_in_nav'] = "Show in nav should not be empty";
+            }
+            else{
             $id = $_POST['id'];
             $category_name = $_POST['category_name'];
             $show_in_nav = $_POST['show_in_nav'];
@@ -18,7 +23,10 @@ include(__DIR__ . './../includes/header.php');
                 header ("Location:/index.php");
                 echo "<meta http-equiv='refresh' content='0,index.php' />";
             }
-        } else { ?><?php
+        } 
+    }
+         ?>
+         <?php
             include(__DIR__ . './../database.php');
             $id = $_GET['id'];
             $sql = "SELECT * from blogcategory WHERE id='$id'";
@@ -26,8 +34,7 @@ include(__DIR__ . './../includes/header.php');
 
             ?>
     </style>
-</head>
-<body>
+
     <?php
             while ($row = mysqli_fetch_assoc($query)) {
     ?>
@@ -56,16 +63,19 @@ include(__DIR__ . './../includes/header.php');
                                      <!--Start Form Field  -->
                                      <!-- <input type="text" id="id" name="id" placeholder="id..." value="<?php echo $row['id']; ?>" readonly> -->
 
-                                    <div class="input-form my-2">
+                                    <div class="input-form my-2 <?php if($errors['category_name']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="category_name">Category Name<span  class="text-danger">*</span></label>
                                             <input type="text" id="category_name" name="category_name" class="form-control " value="<?php echo $row['category_name']; ?>" placeholder="Enter Your Name" autofocus required /> 
+                                            <p class="text-danger"><?php if($errors['category_name']) { echo $errors['category_name']; } ?></p>
                                     </div>  
-                                    <div class="input-form my-2">
+
+                                    <div class="input-form my-2 <?php if($errors['show_in_nav']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="show_in_nav">Show Navigation<span
                                                     class="text-danger">*</span></label>
                                                     <div>
-                                            <input type="radio" id="show_in_nav" value="<?php if ($row["show_in_nav"]=='yes'){echo "selected";}?>" name="show_in_nav"/> Yes
-                                            <input type="radio" id="show_in_nav" value="<?php if ($row["show_in_nav"]=='no'){echo "selected";}?>" name="show_in_nav"/> No
+                                            <input type="radio" id="show_in_nav" value="yes" name="show_in_nav"/> Yes
+                                            <input type="radio" id="show_in_nav" value="no" name="show_in_nav"/> No
+                                            <p class="text-danger"><?php if($errors['show_in_nav']) { echo $errors['show_in_nav']; } ?></p> 
                                     </div>
                                     </div>
                                    
@@ -76,7 +86,7 @@ include(__DIR__ . './../includes/header.php');
                                             <button type="reset" name="reset" value="reset"
                                                 class="btn btn-secondary"><b>Reset</b></button>
                                             <a href="./index.php" class="btn btn-dark float-end"><b>Back</b></a>
-                                        </div>
+                                    </div>
                                     <?php } ?>      
                                 </form>
                             </div>
@@ -88,8 +98,7 @@ include(__DIR__ . './../includes/header.php');
         </div>
     </div>
 </div>
-<?php } ?>
-</body>
-</html>
+<?php 
+ ?>
 
-
+<?php include(__DIR__ . './../includes/footer.php'); ?>

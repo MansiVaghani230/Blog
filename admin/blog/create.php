@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Crypto Blog</title>
-    <?php
+<?php
 include(__DIR__ . './../includes/header.php');
 ?>
-
     <?php
         if (isset($_POST['submit'])) {
 
+            $errors = array();
+
+            if($_POST['title'] == null) {
+                $errors['title'] = "Title should not be empty";
+            }
+            if($_POST['category_id'] == null) {
+                $errors['category_id'] = "Category should not be empty";
+            }
+            if($_FILES['image'] == null) {
+                $errors['image'] = "Image should not be empty";
+            }else{
+               
             $files = $_FILES['image'];
             $title = filter($_POST['title']);
             $category_id = filter($_POST['category_id']);
             $description = filter($_POST['description']);
-
 
             // jpg,png forment
             // for image
@@ -38,12 +43,10 @@ include(__DIR__ . './../includes/header.php');
             }
             header("Location:/index.php");
             echo "<meta http-equiv='refresh' content='0,index.php' />";
-
+            }
         }
         ?>
-</head>
 
-<body>
     <div class="app-content content">
         <div class="content-wrapper container-xxl p-0 pt-5">
             <div class="content-body">
@@ -62,18 +65,21 @@ include(__DIR__ . './../includes/header.php');
                                     <form name="blog" id="blog" class="validate-form1 needs-validation" action=""
                                         method="POST" enctype="multipart/form-data" novalidate>
                                         <!--Start Form Field  -->
-                                        <div class="input-form my-2">
+                                        <div class="input-form my-2 <?php if($errors['title']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="title">Title<span
                                                     class="text-danger">*</span></label>
-                                            <input type="text" id="title" name="title" class="form-control " value=""
+                                            <input type="text" id="title" name="title" class="form-control" value=""
                                                 placeholder="Enter Your title" autofocus required />
+                                                <p class="text-danger"><?php if($errors['title']) { echo $errors['title']; } ?></p>
                                         </div>
-                                        <div class="input-form my-2">
+
+
+                                        <div class="input-form my-2 <?php if($errors['category_id']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="category_id">Blog Category<span
                                                     class="text-danger">*</span></label>
-                                            <!-- <input type="text" id="category_id" category_id="category_id" class="form-control " value="" placeholder="Enter Your category_id" autofocus required />  -->
+                                                    <!-- <input type="text" id="category_id" category_id="category_id" class="form-control " value="" placeholder="Enter Your category_id" autofocus required />  -->
                                             <select name="category_id" id="category_id"
-                                                class="form-select form-control">
+                                                class="form-select form-control" required>
                                                 <option value="">Select Category</option>
                                                 <?php
                                                 $records = mysqli_query($conn, "SELECT category_name,id  From blogcategory");  // Use select query here
@@ -86,18 +92,25 @@ include(__DIR__ . './../includes/header.php');
                                                 <option value="2">2</option>
                                                 <option value="3">3</option> -->
                                             </select>
+                                            <p class="text-danger"><?php if($errors['category_id']) { echo $errors['category_id']; } ?></p>
                                         </div>
-                                        <div class="input-form my-2">
+
+
+                                        <div class="input-form my-2 <?php if($errors['image']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="image">Image<span
                                                     class="text-danger">*</span></label>
                                             <input type="file" id="image" name="image" class="form-control " value=""
                                                 placeholder="Enter Your image" autofocus required />
+                                                <p class="text-danger"><?php if($errors['image']) { echo $errors['image']; } ?></p>
                                         </div>
+
                                         <div class="input-form my-2">
                                             <label class="form-label" for="description">Description<span
                                                     class="text-danger">*</span></label>
                                                     <!-- <div id="editor"> -->
                                                         <textarea  id="editor" name="description"></textarea>
+                                                      
+
                                             <!-- <input type="text" id="description" name="description" class="form-control "
                                                 value="" placeholder="Enter Your Description" autofocus required /> -->
                                         </div>
@@ -127,6 +140,5 @@ include(__DIR__ . './../includes/header.php');
                 console.error( error );
             } );
     </script>
-</body>
 
-</html>
+<?php include(__DIR__ . './../includes/footer.php'); ?>

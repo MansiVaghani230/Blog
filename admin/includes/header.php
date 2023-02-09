@@ -1,20 +1,13 @@
 <?php
 
 include(__DIR__ . './variable.php');
+include(__DIR__ . './../database.php');
 
 session_start();
  if(!isset($_SESSION['member_name']) && !isset($_SESSION['member_pass'])){
     header ("Location:" . BASE_URL . "/login.php");
  }
 
-//$_SESSION['member_name'] = 'jkdobariya';
-//$_SESSION['member_pass'] = md5('Admin@321');
-
-
-?>
-<?php
-// include(__DIR__.'..\database.php');
-include(__DIR__ . './../database.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,17 +19,10 @@ include(__DIR__ . './../database.php');
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="<?php echo BASE_URL; ?>/assets/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+        <link href="<?php echo BASE_URL; ?>/assets/css/main.css" rel="stylesheet" />
         <link href="<?php echo BASE_URL; ?>/assets/css/style.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js"></script>
-        <!-- //ck editor -->
-        <script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>
+      
     </head>
     <body class="sb-nav-fixed">
         <?php

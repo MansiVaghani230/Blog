@@ -11722,3 +11722,9 @@ flex: 1;
 height: 1px;
 background: #eee;
 }
+
+.has-error .form-control, .has-error .form-control:focus, .has-error .form-control:active,
+.has-error .form-select, .has-error .form-select:focus, .has-error .form-select:active {
+  border: 1px solid #ff0000;
+  box-shadow: 0 0 2px #ff0000;
+}
