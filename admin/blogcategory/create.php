@@ -12,8 +12,9 @@
    
         if (isset($_POST['submit'])) {
 
-            $category_name = $_POST['category_name'];
+            $category_name = filter($_POST['category_name']);
             $show_in_nav = $_POST['show_in_nav'];
+
 
             $sql = mysqli_query($conn, "INSERT INTO `blogcategory`(`category_name`,`show_in_nav`) VALUES ('$category_name', '$show_in_nav')");
 
@@ -21,9 +22,8 @@
                 echo mysqli_error($conn);
             } else {
                 
-            header ("Location:" . BASE_URL . "/blogcategory/index.php");
-                // header("location:./index.php");
-                echo "Records added successfully.";
+            header ("Location:index.php");
+            echo "<meta http-equiv='refresh' content='0,index.php' />";
             }
         }
         ?>

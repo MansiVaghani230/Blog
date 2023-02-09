@@ -13,9 +13,9 @@ include(__DIR__ . './../includes/header.php');
         if (isset($_POST['submit'])) {
 
             $files = $_FILES['image'];
-            $title = addslashes($_POST['title']);
-            $category_id = $_POST['category_id'];
-            $description = addslashes($_POST['description']);
+            $title = filter($_POST['title']);
+            $category_id = filter($_POST['category_id']);
+            $description = filter($_POST['description']);
 
 
             // jpg,png forment
@@ -38,8 +38,9 @@ include(__DIR__ . './../includes/header.php');
             if (!$sql) {
                 echo mysqli_error($conn);
             }
-            header("location: ./index.php");
-        exit();
+            header("Location:/index.php");
+            echo "<meta http-equiv='refresh' content='0,index.php' />";
+
         }
 
 
@@ -77,6 +78,7 @@ include(__DIR__ . './../includes/header.php');
                                             <!-- <input type="text" id="category_id" category_id="category_id" class="form-control " value="" placeholder="Enter Your category_id" autofocus required />  -->
                                             <select name="category_id" id="category_id"
                                                 class="form-select form-control">
+                                                <option value="">Select Category</option>
                                                 <?php
                                                 $records = mysqli_query($conn, "SELECT category_name,id  From blogcategory");  // Use select query here
                                                 while ($data = mysqli_fetch_array($records))

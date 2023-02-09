@@ -14,9 +14,9 @@ include(__DIR__ . './../includes/header.php');
 
         if (isset($_POST['submit'])) {
             $id = $_POST['id'];
-            $category_id = $_POST['category_id'];
-            $title = addslashes($_POST['title']);
-            $description = addslashes($_POST['description']);
+            $title = filter($_POST['title']);
+            $category_id = filter($_POST['category_id']);
+            $description = filter($_POST['description']);
             $files = $_FILES['image'];
 
             // jpg,png forment
@@ -46,8 +46,8 @@ include(__DIR__ . './../includes/header.php');
             if (!$sql) {
                 echo mysqli_error($conn);
             } else {
-                header ("Location:" . BASE_URL . "/blogcategory/index.php");
-                echo "Updated Successfully!";
+                header ("Location:/index.php");
+                echo "<meta http-equiv='refresh' content='0,index.php' />";
             }
         } else { ?>
 
@@ -86,6 +86,8 @@ include(__DIR__ . './../includes/header.php');
 
                                         <!--Start Form Field  -->
                                         <!-- <input type="text" id="id" name="id" placeholder="id..." value="<?php echo $row['id']; ?>" readonly> -->
+                                        <input type="hidden" id="id" name="id" class="form-control "
+                                                value="<?php echo $row['id']; ?>" />
 
                                         <div class="input-form my-2">
                                             <label class="form-label" for="title">Title<span
@@ -104,7 +106,10 @@ include(__DIR__ . './../includes/header.php');
                                                 $records = mysqli_query($conn, "SELECT category_name,id  From blogcategory");  // Use select query here
                                                 while ($data = mysqli_fetch_array($records))
                                                 {
-                                                    echo "<option value='" . $data['id'] . "'>" . $data['category_name'] . "</option>";  // displaying data in option menu
+                                                    if($data['id']==$row['category_id'])
+                                                    echo "<option value='" . $data['id'] . "' selected>" . $data['category_name'] . "</option>";  // displaying data in option menu
+                                                    else
+                                                    echo "<option value='" . $data['id'] . "' >" . $data['category_name'] . "</option>";  // displaying data in option menu
                                                 }
                                             ?>
                                                 <!-- <option value="1">1</option>

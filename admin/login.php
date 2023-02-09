@@ -4,7 +4,7 @@ include "database.php";
  session_start();
  if(isset($_SESSION['member_name']) && isset($_SESSION['member_pass'])){
     //   header("location:./dashboard/index.php");
-      header ("Location:" . BASE_URL . "/dashboard/index.php");
+      header ("Location:" . BASE_URL . "/index.php");
  echo "<meta http-equiv='refresh' content='0,index.php' />";
  }
 ?>

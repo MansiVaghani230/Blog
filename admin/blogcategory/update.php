@@ -16,8 +16,8 @@ include(__DIR__ . './../includes/header.php');
             if (!$sql) {
                 echo mysqli_error($conn);
             } else {
-                header ("Location:" . BASE_URL . "/blogcategory/index.php");
-                echo "Updated Successfully!";
+                header ("Location:/index.php");
+                echo "<meta http-equiv='refresh' content='0,index.php' />";
             }
         } else { ?><?php
             include(__DIR__ . './../database.php');
@@ -51,6 +51,8 @@ include(__DIR__ . './../includes/header.php');
                                 <form name="blogcategory" id="blogcategory" class="validate-form1 needs-validation"
                                     action="" method="POST"
                                     enctype="multipart/form-data" novalidate>
+                                    <input type="hidden" id="id" name="id" class="form-control "
+                                                value="<?php echo $row['id']; ?>" />
 
                                      <!--Start Form Field  -->
                                      <!-- <input type="text" id="id" name="id" placeholder="id..." value="<?php echo $row['id']; ?>" readonly> -->
@@ -63,8 +65,8 @@ include(__DIR__ . './../includes/header.php');
                                             <label class="form-label" for="show_in_nav">Show Navigation<span
                                                     class="text-danger">*</span></label>
                                                     <div>
-                                            <input type="radio" id="show_in_nav" value="yes" name="show_in_nav"/> Yes
-                                            <input type="radio" id="show_in_nav" value="no" name="show_in_nav"/> No
+                                            <input type="radio" id="show_in_nav" value="<?php if ($row["show_in_nav"]=='yes'){echo "selected";}?>" name="show_in_nav"/> Yes
+                                            <input type="radio" id="show_in_nav" value="<?php if ($row["show_in_nav"]=='no'){echo "selected";}?>" name="show_in_nav"/> No
                                     </div>
                                     </div>
                                    
