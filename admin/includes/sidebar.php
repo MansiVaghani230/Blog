@@ -59,15 +59,15 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     BLog Category
                 </a>
-                <a class="nav-link" href="<?php echo BASE_URL; ?>/contactus/index.php">
+                <!-- <a class="nav-link" href="<?php echo BASE_URL; ?>/contactus/index.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Contact Us
-                </a>
+                </a> -->
             </div>
         </div>
         <div class="sb-sidenav-footer">
-            <div class="small">Logged in as:</div>
-            Start Bootstrap
+            <div class="small">Blogs</div>
+            Blogs
         </div>
     </nav>
 </div>
