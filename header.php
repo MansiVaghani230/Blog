@@ -15,7 +15,7 @@
 <?php
 include('./admin/database.php');
     ?>
-    <section class="sticky-top">
+    <section>
         <div class="container-fluid themcolor">
           <div class="container ">
             <div class="row text-center">

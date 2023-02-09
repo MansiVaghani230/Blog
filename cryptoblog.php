@@ -21,16 +21,23 @@ include('./header.php');
             </div>
             <div class="row">
                     <?php
+                        $limit = 3;
+                        if(isset($_GET['page'])){
+                        $page = $_GET['page'];
+                        }else{
+                        $page = 1;
+                        }
+                        $offset = ($page - 1) * $limit;
                         $sql = "SELECT blog.id, blog.category_id, blog.description,blog.title,blog.image FROM blog
                         LEFT JOIN blogcategory ON blog.category_id = blogcategory.id
-                        WHERE blog.category_id = {$cat_id}";
+                        WHERE blog.category_id = {$cat_id} LIMIT {$offset},{$limit}";
                         $result = mysqli_query($conn, $sql) or die("Query Failed.");
                         if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)) {
                     ?>
                 <div class="col-sm-4">
                     <div class="wrapper">
-                        <div class="box vintage mt-4">
+                        <div class="box vintage">
                         <a class="post-img" href="blog.php?id=<?php echo $row['id']; ?>"><img class="w-100" src="admin/upload/<?php echo $row['image']; ?>" alt=""/></a>
                         <h2 class="mt-3 fw-bold anchorlink"><a  href='blog.php?id=<?php echo $row['id']; ?>'><?php echo $row['title']; ?></a></h2>
                         </div>
@@ -41,6 +48,7 @@ include('./header.php');
                             echo "<h2>No Record Found.</h2>";
                             }
 
+                            
                                 }
                         ?>
             </div>
