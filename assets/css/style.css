@@ -265,7 +265,10 @@ figure {
 .hover_color img:hover {
     box-shadow: 0px 0px 20px rgb(40, 39, 39);
     transition: .6s;
-  
+}
+
+.hover_color img {
+    border-radius: 10px;
 }
 /* .only-img{
     width: 440px; 

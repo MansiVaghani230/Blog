@@ -25,7 +25,7 @@ include('./header.php');
         while($row = mysqli_fetch_assoc($result)) {
           $category_id = $row['category_id'];
       ?>
-      <div class="col-sm-8">
+      <div class="col-sm-8 hover_color">
       <h2 class="fw-bold py-3 justify-content-center"> <?php echo $row['title']; ?></h2>
         <img class="single-feature-image w-100" src="admin/upload/<?php echo $row['image']; ?>" alt=""/>
         <p class="pt-4"> <?php echo $row['description']; ?></p>
@@ -60,7 +60,7 @@ include('./header.php');
           <div class="item">
             <figure><img src="admin/upload/<?php echo $recent['image']; ?>" alt="EMMYLOU"></figure>
             <div class="txt">
-              <h5 class="mt-3"><?php echo $recent['title']; ?></h5>
+              <h5 class="mt-3 text-center"><?php echo $recent['title']; ?></h5>
               <span><?php echo $recent['description']; ?></span>
             </div>
           </div>

@@ -59,8 +59,8 @@
                                             <label class="form-label" for="show_in_nav">Show Navigation<span
                                                     class="text-danger">*</span></label>
                                                     <div>
-                                            <input type="radio" id="show_in_nav" value="y" name="show_in_nav"/> Yes
-                                            <input type="radio" id="show_in_nav" value="n" name="show_in_nav"/> No
+                                            <input type="radio" id="show_in_nav" value="yes" name="show_in_nav"/> Yes
+                                            <input type="radio" id="show_in_nav" value="no" name="show_in_nav"/> No
                                         </div>
                                         </div>
                                         <div class="input-form my-2">

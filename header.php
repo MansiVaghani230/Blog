@@ -50,7 +50,7 @@
                       $cat_id = $_GET['cid'];
                     }
                     
-                    $sql = "SELECT * FROM blogcategory  Where show_in_nav = 'y'  LIMIT 10";
+                    $sql = "SELECT * FROM blogcategory  Where show_in_nav = 'yes'  LIMIT 10";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result) > 0){
                       $active = "";

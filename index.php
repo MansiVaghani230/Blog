@@ -18,18 +18,18 @@ include('./header.php');
             </div>
         </div>
     </div> 
-    <div class="row">
+    <div class="row">     
+            <div class="col-md-12 col-sm-12 hover01">
+                <div class="owl-carousel owl-theme index">
             <?php
                  $cid = $category['id'];
-            // exit;
-                $sql = "SELECT * from blog Where category_id = $cid LIMIT 4";
-
-                $query1 = mysqli_query($conn, $sql);
-
-            while ($product = mysqli_fetch_assoc($query1)) {
-            ?>
-            
-            <div class="col-md-4 col-sm-12 hover01">
+                 // exit;
+                 $sql = "SELECT * from blog Where category_id = $cid LIMIT 6";
+                 
+                 $query1 = mysqli_query($conn, $sql);
+                 
+                 while ($product = mysqli_fetch_assoc($query1)) {
+                     ?>
                     <div class="item">
                         <a href="blog.php?id=<?php echo $product['id']; ?>">
                         <figure><img  src="admin/upload/<?php echo $product['image']; ?>" alt="" class="w-100"/></figure> 
@@ -38,10 +38,10 @@ include('./header.php');
                         </div>
                         </a>
                     </div>
-                <!-- </div> -->
+                    <?php } ?>
+                </div>
             </div>
-            <?php } ?>
-            </div>
+        </div>
       
     <?php } ?>
 </div>

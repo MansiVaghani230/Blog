@@ -1,5 +1,5 @@
  <!-- FOOTER -->
-<section class="">
+<section class="pt-3">
  <footer class="themcolor">
         <div class="container py-5">
             <div class="row">
@@ -106,28 +106,10 @@
   <script src="./assets/js/owlcarouseljs/owl.carousel.js"></script>
   <script src="./assets/js/owlcarouseljs/owl.carousel.min.js"></script>
 
-<script>
-        $('.first').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: false,
-            dots: false,
-            responsive: {
-                0: {
-                    items: 3
-                },
-                600: {
-                    items: 4
-                },
-                1000: {
-                    items: 4
-                }
-            }
-        })
-    </script>
+
 
     <!-- INSTA SECTION -->
-    <script>
+    <!-- <script>
         $('.instasection').owlCarousel({
             loop: true,
             margin: 30,
@@ -146,10 +128,10 @@
                 }
             }
         })
-    </script>
+    </script> -->
     <!-- INSTA SECTION -->
     <script>
-        $('.news').owlCarousel({
+        $('.index').owlCarousel({
             loop: true,
             margin: 30,
             nav: true,
