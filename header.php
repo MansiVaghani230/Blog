@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
   <link href="./assets/css/owlcarouselcss/owl.carousel.min.css" rel="stylesheet">
   <link href="./assets/css/owlcarouselcss/owl.theme.default.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="h-100 d-flex flex-column">
 <?php include('./admin/database.php'); ?>
     <section class="sticky-top">
         <div class="container-fluid themcolor">
@@ -74,7 +74,7 @@
                     </ul>
                     <form class="d-flex" id="search" name="search" method="GET" action="./search.php">
                       <input class="form-control me-2" name="s" id="s" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
+                      <button class="btn btn-outline-light" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                   </div>
                 </div>

@@ -1,5 +1,5 @@
  <!-- FOOTER -->
-<section class="pt-3">
+<section class="pt-3 mt-auto">
  <footer class="themcolor">
         <div class="container py-5">
             <div class="row">
@@ -169,5 +169,68 @@
       }
     })
   </script>
+
+<script>
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.querySelectorAll('.needs-validation')
+
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+    }, false)
+    })
+})()
+
+</script>
+
+<script>
+// $(document).ready(function() {
+
+    // $( ".contactform" ).submit(function( event ) {
+    //     alert( "Handler for .submit() called." );
+    //     event.preventDefault();
+    // });
+
+    // $(document).on('#contact', 'submit', function( event ) {
+    //     alert();
+    //     event.preventDefault();
+    //     $data = $("form").serialize();
+    //     console.log($data);
+    // });
+
+    // $data = $("form").serialize();
+    
+
+    // $.ajax({
+    //     url: '<?php echo BASE_URL; ?>/mail.php',
+    //     method: "post",
+    //     data: {
+    //         name: ele.parents("tr").attr("data-id"),
+    //         email: ele.parents("tr").find(".quantity").val()
+    //         subject: ele.parents("tr").find(".quantity").val()
+    //         message: ele.parents("tr").find(".quantity").val()
+    //     },
+    //     beforeSend: function() {
+    //     },
+    //     success: function(response) {
+    //         window.location.reload();
+    //     }
+    // });
+
+// });
+
+</script>
 </body>
     </html>
