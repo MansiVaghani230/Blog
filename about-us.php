@@ -2,8 +2,8 @@
 <?php
 include('./header.php');
 ?>
-    <!-- Start Main Section -->
-    <section>
+<!-- Start Main Section -->
+<section>
     <div class="container pt-3">
         <div class="row justify-content-center">
             <div class="col-lg-3 col-sm-12 ">
@@ -17,15 +17,8 @@ include('./header.php');
         </div>
     </div>
 </section>
-   
 
-
-    <!-- End NEWS  -->
-
-   
-
-
-
-    <?php
+<!-- End NEWS  -->
+<?php
 include('./footer.php');
 ?>
