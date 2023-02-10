@@ -1,39 +1,40 @@
  <!-- FOOTER -->
-<section class="pt-3 mt-auto">
+<section class="pt-3 mt-auto text-center">
  <footer class="themcolor">
         <div class="container py-5">
             <div class="row">
-                <div class="col-lg-3 col-sm-12">
+                <div class="col-lg-4 col-sm-12">
                     <div class="mb-4">
                         <h1 class="text-white mb-0" style="font-weight: 900;">Probitmine</h1>
                     </div>
                     <span class="text-secondary fw-bold">Probitmine gives you latest news and information
                         about trending cryptocurrencies.</span>
                 </div>
-                <div class="col-lg-3 col-sm-12 mt-3">
-                    <ul>
-                        <h5 class="text-start">SERVICES</h5>
-                        <li>
-                            <a class="text-secondary" href="about-us.php">About Us</a>
-                        </li>
-                        <li>
-                            <a class="text-secondary" href="contactus.php">Contact Us</a>
+                <div class="col-lg-4 col-sm-12 mt-3">
+                    <ul class="">
+                        <h5 class="">SERVICES</h5>
+                        <li class="text-center">
+                            <a class="text-secondary text-center" href="about-us.php">About Us</a>
                         </li>
 
-                        <li>
+                        <!-- <li class="text-center" >
+                            <a class="text-secondary" href="contactus.php">Contact Us</a>
+                        </li> -->
+
+                        <li class="text-center">
                             <a class="text-secondary" href="service.php">Services</a>
                         </li>
                   
-                        <li>
+                        <li class="text-center">
                             <a class="text-secondary" href="terms-condition.php">Terms &amp; Conditions</a>
                         </li>
 
-                        <li>
+                        <li class="text-center">
                             <a class="text-secondary" href="privacy-policy.php">Privacy Policy</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-sm-12 mt-3">
+                <!-- <div class="col-lg-3 col-sm-12 mt-3">
                     <ul>
                         <h5 class="text-start">PAGE LINK</h5>
                         <li>
@@ -50,16 +51,18 @@
                             <a class="text-secondary" href="crypto_blogs.php">Crypto Blogs</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
 
-                <div class="col-lg-3 col-sm-12 mt-3">
+                <div class="col-lg-4 col-sm-12 mt-3">
                     <ul>
                         <h5 class="text-start">CONTACT & SUPPORT</h5>
 
                         <li>
                             <a class="text-secondary" href="index.php"><i
-                                    class="fa-sharp fa-solid fa-location-dot me-2"></i>Lorem Ipsum 132 xyz Lorem Ipsum
+                                    class="fa-thin fa-location-dot me-2"></i>Lorem Ipsum 132 xyz Lorem Ipsum
                             </a>
+                            <!-- <i class="fa-solid fa-location-dot"></i> -->
+                            <!-- <i class="fa-thin fa-location-dot"></i> -->
                         </li>
 
                         <li>
@@ -106,29 +109,6 @@
   <script src="./assets/js/owlcarouseljs/owl.carousel.js"></script>
   <script src="./assets/js/owlcarouseljs/owl.carousel.min.js"></script>
 
-
-
-    <!-- INSTA SECTION -->
-    <!-- <script>
-        $('.instasection').owlCarousel({
-            loop: true,
-            margin: 30,
-            nav: true,
-            dots: false,
-            navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
-                }
-            }
-        })
-    </script> -->
     <!-- INSTA SECTION -->
     <script>
         $('.index').owlCarousel({
