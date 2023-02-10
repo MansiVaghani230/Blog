@@ -73,8 +73,8 @@ include(__DIR__ . './../includes/header.php');
                                             <label class="form-label" for="show_in_nav">Show Navigation<span
                                                     class="text-danger">*</span></label>
                                                     <div>
-                                            <input type="radio" id="show_in_nav" value="yes" name="show_in_nav"/> Yes
-                                            <input type="radio" id="show_in_nav" value="no" name="show_in_nav"/> No
+                                            <input type="radio" id="show_in_nav" value="yes" name="show_in_nav" <?php if($row['show_in_nav'] == 'yes') { echo 'checked'; }  ?> /> Yes
+                                            <input type="radio" id="show_in_nav" value="no" name="show_in_nav" <?php if($row['show_in_nav'] == 'no') { echo 'checked'; }  ?> /> No
                                             <p class="text-danger"><?php if($errors['show_in_nav']) { echo $errors['show_in_nav']; } ?></p> 
                                     </div>
                                     </div>
