@@ -32,18 +32,15 @@
         
               <div class="col-lg-12 col-12">
              
-              <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container-fluid">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
-                        <a class='nav-link active' aria-current="page" href="index.php">Home</a>
-                      </li>
 
-                      <?php
+
+              <div class="dropdown p-2">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="index.php">Home</a></li>
+                  <?php
                 // include "config.php";
 
                     if(isset($_GET['cid'])){
@@ -65,6 +62,49 @@
                         } ?>
                         <li class="nav-item">
                         <!-- <a class='nav-link active' aria-current="page" href="index.php">Home</a> -->
+                        <a class='dropdown-item' href='cryptoblog.php?cid=<?php echo $row['id']; ?>'><?php echo $row['category_name']; ?></a>
+                      </li>
+                        <?php
+                      }
+                      } ?>
+                </ul>
+              </div>
+
+
+
+
+
+            <!-- <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class='nav-link active' aria-current="page" href="index.php">Home</a>
+                      </li>
+
+                      <?php
+
+                    if(isset($_GET['cid'])){
+                      $cat_id = $_GET['cid'];
+                    }
+                    
+                    $sql = "SELECT * FROM blogcategory  Where show_in_nav = 'yes'  LIMIT 10";
+                    $result = mysqli_query($conn, $sql);
+                    if(mysqli_num_rows($result) > 0){
+                      $active = "";
+                    
+                      while($row = mysqli_fetch_assoc($result)) {
+                        if(isset($_GET['cid'])){
+                          if($row['id'] == $cat_id){
+                            $active = "active";
+                          }else{
+                            $active = "";
+                          }
+                        } ?>
+                        <li class="nav-item">
                         <a class='nav-link' href='cryptoblog.php?cid=<?php echo $row['id']; ?>'><?php echo $row['category_name']; ?></a>
                       </li>
                         <?php
@@ -78,7 +118,7 @@
                     </form>
                   </div>
                 </div>
-              </nav>
+              </nav> -->
               </div>
             </div>
           </div>
