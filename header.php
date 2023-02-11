@@ -82,7 +82,7 @@ function prepareList(array $items, $pid = 0)
                     }
                     
                     // $sql = "SELECT * FROM blogcategory Where show_in_nav = 'yes' and parent_id IS NULL LIMIT 10";
-                    $sql = "SELECT * FROM blogcategory Where show_in_nav = 'yes' ORDER BY id DESC";
+                    $sql = "SELECT * FROM blogcategory Where show_in_nav = 'yes'";
                     $result = mysqli_query($conn, $sql);
                     $items = array();
                     while($row = mysqli_fetch_assoc($result)) {
@@ -93,6 +93,7 @@ function prepareList(array $items, $pid = 0)
 ?>
 
 <?php foreach($list as $item) { ?>
+
 <li class="nav-item dropdown">
   <!-- <a class='nav-link active' aria-current="page" href="index.php">Home</a> -->
   <?php if(isset($item['children'])) { if(count($item['children']) > 0){ ?>
