@@ -16,8 +16,8 @@ include(__DIR__ . './../includes/header.php');
             $id = $_POST['id'];
             $category_name = $_POST['category_name'];
             $show_in_nav = $_POST['show_in_nav'];
-            $category_id =  $_POST['category_id'];
-            $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `parent_id`= '$category_id', `category_name`='$category_name', `show_in_nav` = '$show_in_nav' WHERE `id`='$id'");
+            $parent_id =  $_POST['parent_id'];
+            $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `parent_id`= '$parent_id', `category_name`='$category_name', `show_in_nav` = '$show_in_nav' WHERE `id`='$id'");
             if (!$sql) {
                 echo mysqli_error($conn);
             } else {
@@ -61,7 +61,7 @@ include(__DIR__ . './../includes/header.php');
                                     <input type="hidden" id="id" name="id" class="form-control "
                                                 value="<?php echo $row['id']; ?>" />
 
-                                                <div class="input-form my-2  <?php if($errors['parent_id']) { echo 'has-error'; } ?>">
+                                             <div class="input-form my-2  <?php if($errors['parent_id']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="parent_id">Blog Category<span
                                                     class="text-danger">*</span></label>
                                             <!-- <input type="text" id="parent_id" parent_id="parent_id" class="form-control " value="" placeholder="Enter Your parent_id" autofocus required />  -->
