@@ -8,6 +8,10 @@ include(__DIR__ . './../includes/header.php');
             $errors = array();
             if($_POST['category_name'] == null) {
                 $errors['category_name'] = "Category Name should not be empty";
+                
+            }
+            if($_POST['slug'] == null) {
+                $errors['slug'] = "Slug should not be empty";
             }
             if($_POST['show_in_nav'] == null) {
                 $errors['show_in_nav'] = "Show in nav should not be empty";
@@ -15,9 +19,11 @@ include(__DIR__ . './../includes/header.php');
             else{
             $id = $_POST['id'];
             $category_name = $_POST['category_name'];
+            $slug = filter($_POST['slug']);
+
             $show_in_nav = $_POST['show_in_nav'];
             $parent_id =  $_POST['parent_id'];
-            $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `parent_id`= '$parent_id', `category_name`='$category_name', `show_in_nav` = '$show_in_nav' WHERE `id`='$id'");
+            $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `parent_id`= '$parent_id', `category_name`='$category_name',`slug`='$slug', `show_in_nav` = '$show_in_nav' WHERE `id`='$id'");
             if (!$sql) {
                 echo mysqli_error($conn);
             } else {
@@ -91,6 +97,15 @@ include(__DIR__ . './../includes/header.php');
                                             <input type="text" id="category_name" name="category_name" class="form-control " value="<?php echo $row['category_name']; ?>" placeholder="Enter Your Name" autofocus required /> 
                                             <p class="text-danger"><?php if($errors['category_name']) { echo $errors['category_name']; } ?></p>
                                     </div>  
+
+                                    <div class="input-form my-2 <?php if($errors['slug']) { echo 'has-error'; } ?>">
+                                            <label class="form-label" for="slug">Slug<span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" id="slug" name="slug" class="form-control "
+                                                value="<?php echo $row['slug']; ?>" placeholder="Enter Your Slug"
+                                                autofocus required />
+                                                <p class="text-danger"><?php if($errors['slug']) { echo $errors['slug']; } ?></p>
+                                        </div>
 
                                     <div class="input-form my-2 <?php if($errors['show_in_nav']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="show_in_nav">Show Navigation<span

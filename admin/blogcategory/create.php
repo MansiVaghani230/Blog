@@ -10,17 +10,22 @@
             if($_POST['category_name'] == null) {
                 $errors['category_name'] = "Category Name should not be empty";
             }
+             if($_POST['slug'] == null) {
+                $errors['slug'] = "Slug should not be empty";
+            }
             if($_POST['show_in_nav'] == null) {
                 $errors['show_in_nav'] = "Show in nav should not be empty";
             }
             else{
 
             $category_name = filter($_POST['category_name']);
+            $slug = filter($_POST['slug']);
+
             $show_in_nav = $_POST['show_in_nav'];
 
-            $category_id =  $_POST['category_id'];
+            $parent_id =  $_POST['parent_id'];
 
-            $sql = mysqli_query($conn, "INSERT INTO `blogcategory`(`parent_id`, `category_name`,`show_in_nav`) VALUES ('$category_id', '$category_name', '$show_in_nav')");
+            $sql = mysqli_query($conn, "INSERT INTO `blogcategory`(`parent_id`,`slug`, `category_name`,`show_in_nav`) VALUES ('$parent_id','$slug', '$category_name', '$show_in_nav')");
 
             if (!$sql) {
                 echo mysqli_error($conn);
@@ -50,10 +55,10 @@
                                         action="" method="POST" enctype="multipart/form-data" novalidate>
 
                                         <div class="input-form my-2">
-                                            <label class="form-label" for="category_id">Blog Category<span
+                                            <label class="form-label" for="parent_id">Blog Category<span
                                                     class="text-danger">*</span></label>
-                                                    <!-- <input type="text" id="category_id" category_id="category_id" class="form-control " value="" placeholder="Enter Your category_id" autofocus required />  -->
-                                            <select name="category_id" id="category_id"
+                                                    <!-- <input type="text" id="parent_id" parent_id="parent_id" class="form-control " value="" placeholder="Enter Your parent_id" autofocus required />  -->
+                                            <select name="parent_id" id="parent_id"
                                                 class="form-select form-control">
                                                 <option value="">Select Category</option>
                                                 <?php
@@ -67,7 +72,7 @@
                                                 <option value="2">2</option>
                                                 <option value="3">3</option> -->
                                             </select>
-                                            <p class="text-danger"><?php if($errors['category_id']) { echo $errors['category_id']; } ?></p>
+                                            <p class="text-danger"><?php if($errors['parent_id']) { echo $errors['parent_id']; } ?></p>
                                         </div>
                                         
                                         <!--Start Form Field  -->
@@ -81,6 +86,14 @@
                                         </div>
                                         <?php
                                          ?>
+                                         
+                                        <div class="input-form my-2 <?php if($errors['slug']) { echo 'has-error'; } ?>">
+                                            <label class="form-label" for="slug">Slug<span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" id="slug" name="slug" class="form-control" value=""
+                                                placeholder="Enter Your Slug" autofocus required />
+                                                <p class="text-danger"><?php if($errors['slug']) { echo $errors['slug']; } ?></p>
+                                        </div>
                                         <div class="input-form my-2 <?php if($errors['show_in_nav']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="show_in_nav">Show Navigation<span
                                                     class="text-danger">*</span></label>

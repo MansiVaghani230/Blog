@@ -82,7 +82,7 @@ function prepareList(array $items, $pid = 0)
                     }
                     
                     // $sql = "SELECT * FROM blogcategory Where show_in_nav = 'yes' and parent_id IS NULL LIMIT 10";
-                    $sql = "SELECT * FROM blogcategory Where show_in_nav = 'yes' LIMIT 10";
+                    $sql = "SELECT * FROM blogcategory Where show_in_nav = 'yes'";
                     $result = mysqli_query($conn, $sql);
                     $items = array();
                     while($row = mysqli_fetch_assoc($result)) {

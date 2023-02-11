@@ -13,6 +13,9 @@ include(__DIR__ . './../includes/header.php');
             if($_POST['title'] == null) {
                 $errors['title'] = "Title should not be empty";
             }
+            if($_POST['slug'] == null) {
+                $errors['slug'] = "Slug should not be empty";
+            }
             if($_POST['category_id'] == null) {
                 $errors['category_id'] = "Category should not be empty";
             }
@@ -22,6 +25,7 @@ include(__DIR__ . './../includes/header.php');
             else{
             $id = $_POST['id'];
             $title = filter($_POST['title']);
+            $slug = filter($_POST['slug']);
             $category_id = filter($_POST['category_id']);
             $description = filter($_POST['description']);
             $files = $_FILES['image'];
@@ -40,11 +44,11 @@ include(__DIR__ . './../includes/header.php');
                 move_uploaded_file($filetmp, $destinationfile);
             }
 
-            $sql = mysqli_query($conn, "UPDATE `blog` SET `title`='$title',
+            $sql = mysqli_query($conn, "UPDATE `blog` SET `title`='$title', `slug`='$slug',
             `description`='$description',`category_id`='$category_id' WHERE `id`='$id'");
             if ($destinationfile != '') {
 
-                $sql = mysqli_query($conn, "UPDATE `blog` SET `image`='$destinationfile',`title`='$title',
+                $sql = mysqli_query($conn, "UPDATE `blog` SET `image`='$destinationfile',`title`='$title', `slug`='$slug'
                                                 `description`='$description',`category_id`='$category_id' WHERE `id`='$id'");
             } else {
 
@@ -101,6 +105,15 @@ include(__DIR__ . './../includes/header.php');
                                                 value="<?php echo $row['title']; ?>" placeholder="Enter Your Name"
                                                 autofocus required />
                                                 <p class="text-danger"><?php if($errors['title']) { echo $errors['title']; } ?></p>
+                                        </div>
+
+                                        <div class="input-form my-2 <?php if($errors['slug']) { echo 'has-error'; } ?>">
+                                            <label class="form-label" for="slug">Slug<span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" id="slug" name="slug" class="form-control "
+                                                value="<?php echo $row['slug']; ?>" placeholder="Enter Your Slug"
+                                                autofocus required />
+                                                <p class="text-danger"><?php if($errors['slug']) { echo $errors['slug']; } ?></p>
                                         </div>
                                         <div class="input-form my-2  <?php if($errors['category_id']) { echo 'has-error'; } ?>">
                                             <label class="form-label" for="category_id">Blog Category<span

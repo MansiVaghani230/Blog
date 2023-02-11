@@ -9,6 +9,9 @@ include(__DIR__ . './../includes/header.php');
             if($_POST['title'] == null) {
                 $errors['title'] = "Title should not be empty";
             }
+            if($_POST['slug'] == null) {
+                $errors['slug'] = "Slug should not be empty";
+            }
             if($_POST['category_id'] == null) {
                 $errors['category_id'] = "Category should not be empty";
             }
@@ -18,6 +21,7 @@ include(__DIR__ . './../includes/header.php');
                
             $files = $_FILES['image'];
             $title = filter($_POST['title']);
+            $slug = filter($_POST['slug']);
             $category_id = filter($_POST['category_id']);
             $description = filter($_POST['description']);
 
@@ -35,7 +39,7 @@ include(__DIR__ . './../includes/header.php');
                 move_uploaded_file($filetmp, $destinationfile);
             }
 
-            $sql = mysqli_query($conn, "INSERT INTO `blog`(`title`, `image`, `description`, `category_id`) VALUES ('$title', '$destinationfile','$description','$category_id')");
+            $sql = mysqli_query($conn, "INSERT INTO `blog`(`title`,`slug`, `image`, `description`, `category_id`) VALUES ('$title','$slug', '$destinationfile','$description','$category_id')");
 
 
             if (!$sql) {
@@ -71,6 +75,14 @@ include(__DIR__ . './../includes/header.php');
                                             <input type="text" id="title" name="title" class="form-control" value=""
                                                 placeholder="Enter Your title" autofocus required />
                                                 <p class="text-danger"><?php if($errors['title']) { echo $errors['title']; } ?></p>
+                                        </div>
+
+                                        <div class="input-form my-2 <?php if($errors['slug']) { echo 'has-error'; } ?>">
+                                            <label class="form-label" for="slug">Slug<span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" id="slug" name="slug" class="form-control" value=""
+                                                placeholder="Enter Your Slug" autofocus required />
+                                                <p class="text-danger"><?php if($errors['slug']) { echo $errors['slug']; } ?></p>
                                         </div>
 
 

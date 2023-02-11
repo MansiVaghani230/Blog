@@ -95,7 +95,6 @@
                         <li><a href="" target="_blank"><i class="fa-brands fa-twitter abc"></i></a></li>
                         <li><a href="" target="_blank"><i class="fa-brands fa-linkedin-in abc"></i></a></li>
                         <li><a href="" target="_blank"><i class="fa-brands fa-instagram abc"></i></a></li>
-                        <li><a href="" target="_blank"><i class="fa-brands fa-whatsapp abc"></i></a></li>
                     </ul>
                 </div>
             </div>
