@@ -115,6 +115,7 @@
             loop: true,
             margin: 30,
             nav: true,
+            loop: false,
             dots: false,
             navText: [""],
             responsive: {

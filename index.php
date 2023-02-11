@@ -5,7 +5,7 @@ include('./header.php');
 
 <div class="container">    
         <?php
-            $sql = "SELECT * from blogcategory";
+            $sql = "SELECT * from blogcategory ORDER BY id DESC";
             $query = mysqli_query($conn, $sql);
             while ($category = mysqli_fetch_assoc($query)) {
         ?>
@@ -24,10 +24,8 @@ include('./header.php');
             <?php
                  $cid = $category['id'];
                  // exit;
-                 $sql = "SELECT * from blog Where category_id = $cid LIMIT 6";
-                 
+                 $sql = "SELECT * from blog Where category_id = $cid ORDER BY id DESC LIMIT 6";
                  $query1 = mysqli_query($conn, $sql);
-                 
                  while ($product = mysqli_fetch_assoc($query1)) {
                      ?>
                     <div class="item">

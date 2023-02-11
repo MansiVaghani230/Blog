@@ -14,6 +14,7 @@ include(__DIR__ . './../includes/header.php');
                     <thead>
                         <tr>
                         <th>id</th>
+                        <th>parent</th>
                         <th>name</th>
                         <th>Show In</th>
                         <th>Actions</th>
@@ -22,13 +23,14 @@ include(__DIR__ . './../includes/header.php');
                     <tbody>
                     <?php
                        include('../database.php'); 
-                        $sql = "SELECT * from blogcategory";
+                        $sql = "SELECT b.id as `id`, p.category_name as `pname`, b.category_name as `name`, b.show_in_nav as `show` from blogcategory AS b LEFT JOIN blogcategory AS p ON b.parent_id = p.id";
                         $query = mysqli_query($conn, $sql);
                         while ($row = mysqli_fetch_assoc($query)) {
                     ?>
                         <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['category_name']; ?></td>
-                        <td><?php echo $row['show_in_nav']; ?></td>
+                        <td><?php echo $row['pname']; ?></td>
+                        <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['show']; ?></td>
                         <td>
                         <a href="./update.php?id=<?php echo $row['id']; ?>"><button class="btn btn-success"><i
                                         class="fa-solid fa-pen-to-square"></i></button></a>

@@ -18,8 +18,9 @@
             $category_name = filter($_POST['category_name']);
             $show_in_nav = $_POST['show_in_nav'];
 
+            $category_id =  $_POST['category_id'];
 
-            $sql = mysqli_query($conn, "INSERT INTO `blogcategory`(`category_name`,`show_in_nav`) VALUES ('$category_name', '$show_in_nav')");
+            $sql = mysqli_query($conn, "INSERT INTO `blogcategory`(`parent_id`, `category_name`,`show_in_nav`) VALUES ('$category_id', '$category_name', '$show_in_nav')");
 
             if (!$sql) {
                 echo mysqli_error($conn);
@@ -47,9 +48,31 @@
                                 <div class="card-body pt-0">
                                     <form name="blogcategory" id="blogcategory" class="validate-form1  needs-validation"
                                         action="" method="POST" enctype="multipart/form-data" novalidate>
+
+                                        <div class="input-form my-2">
+                                            <label class="form-label" for="category_id">Blog Category<span
+                                                    class="text-danger">*</span></label>
+                                                    <!-- <input type="text" id="category_id" category_id="category_id" class="form-control " value="" placeholder="Enter Your category_id" autofocus required />  -->
+                                            <select name="category_id" id="category_id"
+                                                class="form-select form-control">
+                                                <option value="">Select Category</option>
+                                                <?php
+                                                $records = mysqli_query($conn, "SELECT category_name,id  From blogcategory");  // Use select query here
+                                                while ($data = mysqli_fetch_array($records))
+                                                {
+                                                    echo "<option value='" . $data['id'] . "'>" . $data['category_name'] . "</option>";  // displaying data in option menu
+                                                }
+                                            ?>
+                                                <!-- <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option> -->
+                                            </select>
+                                            <p class="text-danger"><?php if($errors['category_id']) { echo $errors['category_id']; } ?></p>
+                                        </div>
+                                        
                                         <!--Start Form Field  -->
                                         <div class="input-form my-2 <?php if($errors['category_name']) { echo 'has-error'; } ?>">
-                                            <label class="form-label" for="category_name">Blog Category<span
+                                            <label class="form-label" for="category_name">Category Name<span
                                                     class="text-danger">*</span></label>
                                             <input type="text" id="category_name" name="category_name"
                                                 class="form-control " value="<?php echo $_POST['category_name']; ?>" placeholder="Enter Your Category Name"

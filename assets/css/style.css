@@ -70,16 +70,16 @@
     font-weight: 500;
 } */
 
-
-
-
    /* //mansi blog page// */
 .box {
-    position: relative;
-    max-height: 300px;
-    border-radius: 10px;
     overflow: hidden;
+    border-radius: 10px;
+    height: 300px;
+    position: relative;
     box-shadow: 0 1.4px 1.7px rgba(0, 0, 0, 0.017), 0 3.3px 4px rgba(0, 0, 0, 0.024), 0 6.3px 7.5px rgba(0, 0, 0, 0.03), 0 11.2px 13.4px rgba(0, 0, 0, 0.036), 0 20.9px 25.1px rgba(0, 0, 0, 0.043), 0 50px 60px rgba(0, 0, 0, 0.06);
+}
+.box img{
+    min-height: 100% !important;
 }
 .box .hide {
     opacity: 0;
@@ -239,9 +239,11 @@ footer ul li a{
 figure {
 	overflow: hidden;
     border-radius: 10px;
-    max-height: 350px;
+    height: 350px;
 }
-
+figure img{
+    min-height: 100% !important;
+}
 /* Zoom In #1 */
 .hover01 a {
     text-decoration: none;
@@ -283,4 +285,8 @@ figure {
 .has-error .form-select, .has-error .form-select:focus, .has-error .form-select:active {
   border: 1px solid #ff0000;
   box-shadow: 0 0 2px #ff0000;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
 }

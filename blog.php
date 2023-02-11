@@ -28,7 +28,7 @@ include('./header.php');
       <div class="col-sm-8 hover_color">
       <h2 class="fw-bold py-3 justify-content-center"> <?php echo $row['title']; ?></h2>
         <img class="single-feature-image w-100" src="admin/upload/<?php echo $row['image']; ?>" alt=""/>
-        <p class="pt-4"> <?php echo $row['description']; ?></p>
+        <p class="pt-4"> <?php echo htmlspecialchars_decode($row['description']); ?></p>
         <br>
       </div>
       <?php }
@@ -61,7 +61,7 @@ include('./header.php');
             <figure><img src="admin/upload/<?php echo $recent['image']; ?>" alt="EMMYLOU"></figure>
             <div class="txt">
               <h5 class="mt-3 text-center"><?php echo $recent['title']; ?></h5>
-              <span><?php echo $recent['description']; ?></span>
+              <span><?php echo htmlspecialchars_decode($recent['description']); ?></span>
             </div>
           </div>
       <?php }

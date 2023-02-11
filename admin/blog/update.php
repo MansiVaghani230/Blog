@@ -16,9 +16,10 @@ include(__DIR__ . './../includes/header.php');
             if($_POST['category_id'] == null) {
                 $errors['category_id'] = "Category should not be empty";
             }
-            if($_POST['image'] == null) {
-                $errors['image'] = "Image should not be empty";
-            }else{
+            // if($_POST['image'] == null) {
+            //     $errors['image'] = "Image should not be empty";
+            // }
+            else{
             $id = $_POST['id'];
             $title = filter($_POST['title']);
             $category_id = filter($_POST['category_id']);
@@ -47,7 +48,7 @@ include(__DIR__ . './../includes/header.php');
                                                 `description`='$description',`category_id`='$category_id' WHERE `id`='$id'");
             } else {
 
-                echo "image Upload";
+                echo "";
             }
             if (!$sql) {
                 echo mysqli_error($conn);
@@ -123,13 +124,13 @@ include(__DIR__ . './../includes/header.php');
                                             </select>
                                             <p class="text-danger"><?php if($errors['category_id']) { echo $errors['category_id']; } ?></p>
                                         </div>
-                                        <div class="input-form my-2  <?php if($errors['image']) { echo 'has-error'; } ?>">
+                                        <div class="input-form my-2">
                                             <label class="form-label" for="image">Image<span
                                                     class="text-danger">*</span></label>
                                             <input type="file" id="image" name="image" class="form-control "
                                                 value="" placeholder="Enter Your image"
-                                                autofocus required />
-                                                <p class="text-danger"><?php if($errors['image']) { echo $errors['image']; } ?></p>
+                                                autofocus />
+                                                <!-- <p class="text-danger"><?php if($errors['image']) { echo $errors['image']; } ?></p> -->
                                         </div>
                                        
 

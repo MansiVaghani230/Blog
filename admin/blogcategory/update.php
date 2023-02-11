@@ -16,7 +16,8 @@ include(__DIR__ . './../includes/header.php');
             $id = $_POST['id'];
             $category_name = $_POST['category_name'];
             $show_in_nav = $_POST['show_in_nav'];
-            $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `category_name`='$category_name', `show_in_nav` = '$show_in_nav' WHERE `id`='$id'");
+            $category_id =  $_POST['category_id'];
+            $sql = mysqli_query($conn, "UPDATE `blogcategory` SET `parent_id`= '$category_id', `category_name`='$category_name', `show_in_nav` = '$show_in_nav' WHERE `id`='$id'");
             if (!$sql) {
                 echo mysqli_error($conn);
             } else {
@@ -60,6 +61,28 @@ include(__DIR__ . './../includes/header.php');
                                     <input type="hidden" id="id" name="id" class="form-control "
                                                 value="<?php echo $row['id']; ?>" />
 
+                                                <div class="input-form my-2  <?php if($errors['parent_id']) { echo 'has-error'; } ?>">
+                                            <label class="form-label" for="parent_id">Blog Category<span
+                                                    class="text-danger">*</span></label>
+                                            <!-- <input type="text" id="parent_id" parent_id="parent_id" class="form-control " value="" placeholder="Enter Your parent_id" autofocus required />  -->
+                                            <select name="parent_id" id="parent_id"
+                                                class="form-select form-control">
+                                                <?php
+                                                $records = mysqli_query($conn, "SELECT category_name,id  From blogcategory");  // Use select query here
+                                                while ($data = mysqli_fetch_array($records))
+                                                {
+                                                    if($data['id']==$row['parent_id'])
+                                                    echo "<option value='" . $data['id'] . "' selected>" . $data['category_name'] . "</option>";  // displaying data in option menu
+                                                    else
+                                                    echo "<option value='" . $data['id'] . "' >" . $data['category_name'] . "</option>";  // displaying data in option menu
+                                                }
+                                            ?>
+                                                <!-- <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option> -->
+                                            </select>
+                                            <p class="text-danger"><?php if($errors['category_id']) { echo $errors['category_id']; } ?></p>
+                                        </div>
                                      <!--Start Form Field  -->
                                      <!-- <input type="text" id="id" name="id" placeholder="id..." value="<?php echo $row['id']; ?>" readonly> -->
 

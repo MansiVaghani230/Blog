@@ -23,7 +23,7 @@ include('./header.php');
                     <?php
                         $sql = "SELECT blog.id, blog.category_id, blog.description,blog.title,blog.image FROM blog
                         LEFT JOIN blogcategory ON blog.category_id = blogcategory.id
-                        WHERE blog.category_id = {$cat_id}";
+                        WHERE blog.category_id = {$cat_id} ORDER BY id DESC";
                         $result = mysqli_query($conn, $sql) or die("Query Failed.");
                         if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)) {

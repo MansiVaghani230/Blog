@@ -1,3 +1,34 @@
+<?php 
+
+function prepareList(array $items, $pid = 0)
+{
+    $output = array();
+
+    # loop through the items
+    foreach ($items as $item) {
+
+        # Whether the parent_id of the item matches the current $pid
+        if ((int) $item['parent_id'] == $pid) {
+
+            # Call the function recursively, use the item's id as the parent's id
+            # The function returns the list of children or an empty array()
+            if ($children = prepareList($items, $item['id'])) {
+
+                # Store all children of the current item
+                $item['children'] = $children;
+            }
+
+            # Fill the output
+            $output[] = $item;
+        }
+    }
+
+    return $output;
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
@@ -32,49 +63,7 @@
         
               <div class="col-lg-12 col-12">
              
-
-
-              <div class="dropdown p-2">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown button
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="index.php">Home</a></li>
-                  <?php
-                // include "config.php";
-
-                    if(isset($_GET['cid'])){
-                      $cat_id = $_GET['cid'];
-                    }
-                    
-                    $sql = "SELECT * FROM blogcategory  Where show_in_nav = 'yes'  LIMIT 10";
-                    $result = mysqli_query($conn, $sql);
-                    if(mysqli_num_rows($result) > 0){
-                      $active = "";
-                    
-                      while($row = mysqli_fetch_assoc($result)) {
-                        if(isset($_GET['cid'])){
-                          if($row['id'] == $cat_id){
-                            $active = "active";
-                          }else{
-                            $active = "";
-                          }
-                        } ?>
-                        <li class="nav-item">
-                        <!-- <a class='nav-link active' aria-current="page" href="index.php">Home</a> -->
-                        <a class='dropdown-item' href='cryptoblog.php?cid=<?php echo $row['id']; ?>'><?php echo $row['category_name']; ?></a>
-                      </li>
-                        <?php
-                      }
-                      } ?>
-                </ul>
-              </div>
-
-
-
-
-
-            <!-- <nav class="navbar navbar-expand-lg navbar-dark">
+              <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -86,13 +75,40 @@
                       </li>
 
                       <?php
+                // include "config.php";
 
                     if(isset($_GET['cid'])){
                       $cat_id = $_GET['cid'];
                     }
                     
-                    $sql = "SELECT * FROM blogcategory  Where show_in_nav = 'yes'  LIMIT 10";
+                    // $sql = "SELECT * FROM blogcategory Where show_in_nav = 'yes' and parent_id IS NULL LIMIT 10";
+                    $sql = "SELECT * FROM blogcategory Where show_in_nav = 'yes' ORDER BY id DESC";
                     $result = mysqli_query($conn, $sql);
+                    $items = array();
+                    while($row = mysqli_fetch_assoc($result)) {
+                      $items[] = $row;
+                    }
+
+                    $list = prepareList($items);
+?>
+
+<?php foreach($list as $item) { ?>
+<li class="nav-item dropdown">
+  <!-- <a class='nav-link active' aria-current="page" href="index.php">Home</a> -->
+  <?php if(isset($item['children'])) { if(count($item['children']) > 0){ ?>
+    <a class='nav-link' href='cryptoblog.php?cid=<?php echo $item['id']; ?>'><?php echo $item['category_name']; ?></a>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <?php foreach($item['children'] as $subitem) { ?>
+    <li><a class="dropdown-item" href="cryptoblog.php?cid=<?php echo $subitem['id']; ?>"><?php echo $subitem['category_name']; ?></a></li>
+    <?php } ?>
+  </ul>
+  <?php } ?>
+</li>                  
+<?php }  else{ ?>
+  <a class='nav-link' href='cryptoblog.php?cid=<?php echo $item['id']; ?>'><?php echo $item['category_name']; ?></a>
+<?php }}?>
+
+<?php
                     if(mysqli_num_rows($result) > 0){
                       $active = "";
                     
@@ -104,11 +120,16 @@
                             $active = "";
                           }
                         } ?>
-                        <li class="nav-item">
-                        <a class='nav-link' href='cryptoblog.php?cid=<?php echo $row['id']; ?>'><?php echo $row['category_name']; ?></a>
-                      </li>
+                       
+                       <?php if($row['parent_id'] == null) { ?>
+
+                      
+
+                       <?php } ?>
+
                         <?php
-                      }
+                          
+                        }
                       } ?>
 
                     </ul>
@@ -118,9 +139,11 @@
                     </form>
                   </div>
                 </div>
-              </nav> -->
+              </nav>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+

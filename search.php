@@ -17,7 +17,7 @@ include('./header.php');
       <?php
       // $category_id = null;
       $search = $_GET['s'];
-      $sql = "SELECT * FROM blog WHERE title LIKE '%$search%' OR description LIKE '%$search%'";
+      $sql = "SELECT * FROM blog WHERE title LIKE '%$search%'";
       // $sql = "SELECT blog.id, blog.category_id, blog.description,blog.title,blog.image FROM blog
       // LEFT JOIN blogcategory ON blog.category_id = blogcategory.id
       // WHERE blog.id = {$id}";
@@ -32,7 +32,7 @@ include('./header.php');
           <img class="single-feature-image w-100" src="admin/upload/<?php echo $row['image']; ?>" alt=""/>
         </figure>
         <div class="txt">
-            <h5 class="mt-3"><?php echo $row['description']; ?></h5>
+            <h5 class="mt-3"><?php echo htmlspecialchars_decode($row['description']); ?></h5>
         </div>
         <br>
       </div>
