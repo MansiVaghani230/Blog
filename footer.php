@@ -59,7 +59,7 @@
 
                         <li>
                             <a class="text-secondary" href="index.php"><i
-                                    class="fa-thin fa-location-dot me-2"></i>Lorem Ipsum 132 xyz Lorem Ipsum
+                                    class="fa fa-map-marker me-2"></i>Lorem Ipsum 132 xyz Lorem Ipsum
                             </a>
                             <!-- <i class="fa-solid fa-location-dot"></i> -->
                             <!-- <i class="fa-thin fa-location-dot"></i> -->

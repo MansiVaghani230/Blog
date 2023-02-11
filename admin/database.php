@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "blog";
+$db = "crypto_blogs";
 
 //Procedural
 // Create connection
