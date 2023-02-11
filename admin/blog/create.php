@@ -21,7 +21,7 @@ include(__DIR__ . './../includes/header.php');
                
             $files = $_FILES['image'];
             $title = filter($_POST['title']);
-            $slug = filter($_POST['slug']);
+            $slug = slug(filter($_POST['slug']));
             $category_id = filter($_POST['category_id']);
             $description = filter($_POST['description']);
 

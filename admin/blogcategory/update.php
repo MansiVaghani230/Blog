@@ -19,7 +19,7 @@ include(__DIR__ . './../includes/header.php');
             else{
             $id = $_POST['id'];
             $category_name = $_POST['category_name'];
-            $slug = filter($_POST['slug']);
+            $slug = slug(filter($_POST['slug']));
 
             $show_in_nav = $_POST['show_in_nav'];
             $parent_id =  $_POST['parent_id'];

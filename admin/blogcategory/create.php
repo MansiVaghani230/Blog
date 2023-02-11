@@ -19,7 +19,7 @@
             else{
 
             $category_name = filter($_POST['category_name']);
-            $slug = filter($_POST['slug']);
+            $slug = slug(filter($_POST['slug']));
 
             $show_in_nav = $_POST['show_in_nav'];
 

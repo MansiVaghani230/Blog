@@ -29,7 +29,7 @@ include('./header.php');
                  while ($product = mysqli_fetch_assoc($query1)) {
                      ?>
                     <div class="item">
-                        <a href="blog.php?id=<?php echo $product['id']; ?>">
+                        <a href="blog.php?title=<?php echo $product['slug']; ?>">
                         <figure><img  src="admin/upload/<?php echo $product['image']; ?>" alt="" class="w-100"/></figure> 
                         <div class="txt">
                             <h5 class="mt-3"><?php echo $product['title']; ?></h5>

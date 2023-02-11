@@ -97,16 +97,16 @@ function prepareList(array $items, $pid = 0)
 <li class="nav-item dropdown">
   <!-- <a class='nav-link active' aria-current="page" href="index.php">Home</a> -->
   <?php if(isset($item['children'])) { if(count($item['children']) > 0){ ?>
-    <a class='nav-link' href='cryptoblog.php?cid=<?php echo $item['id']; ?>'><?php echo $item['category_name']; ?></a>
+    <a class='nav-link' href='cryptoblog.php?title=<?php echo $item['slug']; ?>'><?php echo $item['category_name']; ?></a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
     <?php foreach($item['children'] as $subitem) { ?>
-    <li><a class="dropdown-item" href="cryptoblog.php?cid=<?php echo $subitem['id']; ?>"><?php echo $subitem['category_name']; ?></a></li>
+    <li><a class="dropdown-item" href="cryptoblog.php?title=<?php echo $subitem['slug']; ?>"><?php echo $subitem['category_name']; ?></a></li>
     <?php } ?>
   </ul>
   <?php } ?>
 </li>                  
 <?php }  else{ ?>
-  <a class='nav-link' href='cryptoblog.php?cid=<?php echo $item['id']; ?>'><?php echo $item['category_name']; ?></a>
+  <a class='nav-link' href='cryptoblog.php?title=<?php echo $item['slug']; ?>'><?php echo $item['category_name']; ?></a>
 <?php }}?>
 
 <?php

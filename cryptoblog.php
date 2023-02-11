@@ -8,9 +8,9 @@ include('./header.php');
                     <div class="light_border">
                         <div class="headline">
                             <?php
-                                if(isset($_GET['cid'])){
-                                $cat_id = $_GET['cid'];
-                                $sql1 = "SELECT * FROM blogcategory WHERE id = {$cat_id}";
+                                if(isset($_GET['title'])){
+                                $cat_id = $_GET['title'];
+                                $sql1 = "SELECT * FROM blogcategory WHERE slug = '{$cat_id}'";
                                 $result1 = mysqli_query($conn, $sql1) or die("Query Failed.");
                                 $row1 = mysqli_fetch_assoc($result1);
                                 ?>
@@ -21,9 +21,9 @@ include('./header.php');
             </div>
             <div class="row">
                     <?php
-                        $sql = "SELECT blog.id, blog.category_id, blog.description,blog.title,blog.image FROM blog
+                        $sql = "SELECT blog.id, blog.slug, blog.category_id, blog.description,blog.title,blog.image FROM blog
                         LEFT JOIN blogcategory ON blog.category_id = blogcategory.id
-                        WHERE blog.category_id = {$cat_id} ORDER BY id DESC";
+                        WHERE blogcategory.slug = '{$cat_id}' ORDER BY id DESC";
                         $result = mysqli_query($conn, $sql) or die("Query Failed.");
                         if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)) {
@@ -31,8 +31,8 @@ include('./header.php');
                 <div class="col-sm-4">
                     <div class="wrapper">
                         <div class="box vintage mt-4">
-                        <a class="post-img" href="blog.php?id=<?php echo $row['id']; ?>"><img class="w-100" src="admin/upload/<?php echo $row['image']; ?>" alt=""/></a>
-                        <h2 class="mt-3 fw-bold anchorlink"><a  href='blog.php?id=<?php echo $row['id']; ?>'><?php echo $row['title']; ?></a></h2>
+                        <a class="post-img" href="blog.php?title=<?php echo $row['slug']; ?>"><img class="w-100" src="admin/upload/<?php echo $row['image']; ?>" alt=""/></a>
+                        <h2 class="mt-3 fw-bold anchorlink"><a  href='blog.php?title=<?php echo $row['slug']; ?>'><?php echo $row['title']; ?></a></h2>
                         </div>
                     </div>
                 </div>
