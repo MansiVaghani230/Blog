@@ -33,7 +33,7 @@
               <div class="col-lg-12 col-12">
              
 
-
+<!-- 
               <div class="dropdown p-2">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown button
@@ -41,7 +41,6 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li><a class="dropdown-item" href="index.php">Home</a></li>
                   <?php
-                // include "config.php";
 
                     if(isset($_GET['cid'])){
                       $cat_id = $_GET['cid'];
@@ -61,20 +60,19 @@
                           }
                         } ?>
                         <li class="nav-item">
-                        <!-- <a class='nav-link active' aria-current="page" href="index.php">Home</a> -->
                         <a class='dropdown-item' href='cryptoblog.php?cid=<?php echo $row['id']; ?>'><?php echo $row['category_name']; ?></a>
                       </li>
                         <?php
                       }
                       } ?>
                 </ul>
-              </div>
+              </div> -->
 
 
 
 
 
-            <!-- <nav class="navbar navbar-expand-lg navbar-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -118,7 +116,7 @@
                     </form>
                   </div>
                 </div>
-              </nav> -->
+              </nav>
               </div>
             </div>
           </div>
