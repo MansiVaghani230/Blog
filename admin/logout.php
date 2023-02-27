@@ -1,5 +1,5 @@
 <?php
-include(__DIR__ . './includes/variable.php');
+include(__DIR__ . '/includes/variable.php');
 session_start();
 if(isset($_SESSION['member_name']) && isset($_SESSION['member_pass'])){
 unset($_SESSION['member_name']);
