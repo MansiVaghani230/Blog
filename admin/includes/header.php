@@ -1,7 +1,7 @@
 <?php
 
-include(__DIR__ . './variable.php');
-include(__DIR__ . './../database.php');
+include(__DIR__ . '/variable.php');
+include(__DIR__ . '/../database.php');
 
 session_start();
  if(!isset($_SESSION['member_name']) && !isset($_SESSION['member_pass'])){
