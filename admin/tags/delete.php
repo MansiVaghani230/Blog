@@ -16,6 +16,6 @@ if (mysqli_query($conn, $sql)) {
 }
 
 // Redirect to the index page after deletion
-header("Location: " . BASE_URL . "/contactus/index.php");
+header("Location: " . BASE_URL . "/tags/index.php");
 exit; // Ensure no further code is executed after redirection
 ?>

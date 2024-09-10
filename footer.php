@@ -64,7 +64,7 @@
 
                         <li>
                             <a class="text-secondary" href="index.php"><i
-                                    class="fa-regular fa-envelope me-2"></i>jianl@gmail.com </a>
+                                    class="fa-regular fa-envelope me-2"></i>hello@gmail.com</a>
                         </li>
 
                         <li>
